@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_pipes"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/nav_item_pipes" />
+        <item
+            android:id="@+id/nav_tanks"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/nav_item_tanks" />
+        <item
+            android:id="@+id/nav_losses"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/nav_item_losses" />
+        <item
+            android:id="@+id/nav_filler"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/nav_item_filler" />
+        <item
+            android:id="@+id/nav_bmm"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/nav_item_bmm" />
+        <item
+            android:id="@+id/nav_sprayballs"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/nav_item_sprayballs" />
+        <item
+            android:id="@+id/nav_poultry"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/nav_item_poultry" />
+
+    </group>
+
+<!--    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>-->
+
+</menu>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Калькулятор</string>
+    <string name="nav_item_bmm">БММ</string>
+    <string name="action_settings">Настройки</string>
+    <string name="nav_item_filler">Блок розлива</string>
+    <string name="nav_item_losses">Потери</string>
+    <string name="nav_item_pipes">Трубы</string>
+    <string name="nav_item_poultry">Калькулятор птички</string>
+    <string name="nav_item_sprayballs">Моющие головки</string>
+    <string name="nav_item_tanks">Танки</string>
+    <string name="navigation_drawer_close">Закрыть список</string>
+    <string name="navigation_drawer_open">Открыть список</string>
+</resources>
