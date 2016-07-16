@@ -2,7 +2,6 @@
 <resources>
     <string name="app_name">Калькулятор</string>
     <string name="nav_item_bmm">БММ</string>
-    <string name="action_settings">Настройки</string>
     <string name="nav_item_filler">Блок розлива</string>
     <string name="nav_item_losses">Потери</string>
     <string name="nav_item_pipes">Трубы</string>
@@ -11,4 +10,8 @@
     <string name="nav_item_tanks">Танки</string>
     <string name="navigation_drawer_close">Закрыть список</string>
     <string name="navigation_drawer_open">Открыть список</string>
+    <string name="action_language">Язык</string>
+    <string name="action_about">О программе</string>
+    <string name="text_about"><b>О программе.</b> \nВсе права  на данную программу принадлежат разработчикам: \nВоронков Николай \nТымчук Александр \n\nДанное программное обеспечение распространяется бесплатно. Копирование, изменение и распространение без уведомления разработчиков запрещено. Использование в коммерческих целях запрещено. \n\nВсе пожелания и замечания отправлять на почту voronkov.n@list.ru.</string>
+    <string name="hello_blank_fragment">Пробный текст</string>
 </resources>
