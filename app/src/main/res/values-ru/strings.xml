@@ -12,6 +12,16 @@
     <string name="navigation_drawer_open">Открыть список</string>
     <string name="action_language">Язык</string>
     <string name="action_about">О программе</string>
-    <string name="text_about"><b>О программе.</b> \nВсе права  на данную программу принадлежат разработчикам: \nВоронков Николай \nТымчук Александр \n\nДанное программное обеспечение распространяется бесплатно. Копирование, изменение и распространение без уведомления разработчиков запрещено. Использование в коммерческих целях запрещено. \n\nВсе пожелания и замечания отправлять на почту voronkov.n@list.ru.</string>
-    <string name="hello_blank_fragment">Пробный текст</string>
+    <string name="text_about"><b>О программе</b> \nВсе права  на данную программу принадлежат разработчикам: \nВоронков Николай \nТымчук Александр \n\nДанное программное обеспечение распространяется бесплатно. Копирование, изменение и распространение без уведомления разработчиков запрещено. Использование в коммерческих целях запрещено. \n\nВсе пожелания и замечания отправлять на почту voronkov.n@list.ru.</string>
+    <string name="btn_pipes_flowD_text">Поток, м/с от диаметра трубы</string>
+    <string name="tv_pipes_flowD_Diameter">Диаметр трубы,\nмм</string>
+    <string name="tv_pipes_flowD_flow">Поток,\nм3/с</string>
+    <string name="tv_pipes_flowD_l_m">л/мин</string>
+    <string name="tv_pipes_flowD_l_s">л/с</string>
+    <string name="tv_pipes_flowD_m_s">м/с</string>
+    <string name="btn_text_calculate">Рассчитать</string>
+    <string name="note_empty_field">Необходимо заполнить все поля</string>
+
+    <string name="btn_pipes_flowV_text">Поток, м3/ч от скорости потока</string>
+
 </resources>

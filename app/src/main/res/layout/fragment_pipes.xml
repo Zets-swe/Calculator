@@ -1,14 +1,132 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ru.zets_swe.calculator.fragments.FragmentPipes">
+    tools:context="ru.zets_swe.calculator.fragments.FragmentPipes"
+    android:orientation="vertical"
+    android:padding="6dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <Button
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="?attr/colorPrimary"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:text="@string/btn_pipes_flowD_text"
+        android:id="@+id/btn_pipes_flowD" />
 
-</FrameLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/L_pipes_flowD"
+        android:visibility="gone">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shrinkColumns="0"
+            android:textAlignment="center"
+            android:stretchColumns="*"
+            android:baselineAligned="false">
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center">
+
+                <TextView
+                    android:text="@string/tv_pipes_flowD_flow"
+                    android:id="@+id/textView"
+                    style="@style/table_text"/>
+
+                <TextView
+                    android:text="@string/tv_pipes_flowD_Diameter"
+                    android:id="@+id/textView2"
+                    style="@style/table_text"/>
+
+                <TextView
+                    android:text="@string/tv_pipes_flowD_m_s"
+                    android:id="@+id/textView3"
+                   style="@style/table_text"/>
+
+                <TextView
+                    android:text="@string/tv_pipes_flowD_l_m"
+                    android:id="@+id/textView4"
+                    style="@style/table_text"/>
+
+                <TextView
+                    android:text="@string/tv_pipes_flowD_l_s"
+                    android:id="@+id/textView5"
+                    style="@style/table_text"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:inputType="number|numberDecimal"
+                    android:ems="1"
+                    android:id="@+id/et_pipes_flowD_flow"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="0" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number|numberDecimal"
+                    android:ems="1"
+                    android:id="@+id/et_pipes_flowD_diameter"
+                    android:layout_weight="1"
+                    android:hint="0" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="1"
+                    android:id="@+id/et_pipes_flowD_m_s"
+                    android:layout_weight="1"
+                    android:editable="true"
+                    android:enabled="false" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="1"
+                    android:id="@+id/et_pipes_flowD_l_min"
+                    android:layout_weight="1"
+                    android:enabled="false"
+                    android:editable="true" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="1"
+                    android:id="@+id/et_pipes_flowD_l_s"
+                    android:layout_weight="1"
+                    android:enabled="false"
+                    android:editable="true" />
+            </TableRow>
+        </TableLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_text_calculate"
+            android:id="@+id/btn_pipes_flowD_calculate"
+            android:layout_gravity="center_horizontal" />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_pipes_flowV_text"
+        android:id="@+id/btn_pipes_flowV" />
+
+</LinearLayout>

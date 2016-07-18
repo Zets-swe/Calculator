@@ -5,7 +5,6 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-/*import android.support.design.widget.Snackbar;*/
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -146,14 +145,10 @@ public class MainActivity extends AppCompatActivity
         SharedPreferences.Editor ed = sPref.edit();
 
         if (lan.equals(RUS_LANGUAGE)) {
-            //item.setIcon(R.drawable.ic_english_flag_24dp);
-            //TODO: Сохранить иконку в настройки
             ed.putString(LANGUAGE, EN_LANGUAGE);
             ed.commit();
             Log.d("Lan=", sPref.getString(LANGUAGE, "").toString());
         } else {
-            //item.setIcon(R.drawable.ic_russian_flag_24dp);
-            //TODO: Сохранить иконку в настройки
             ed.putString(LANGUAGE, RUS_LANGUAGE);
             ed.commit();
             Log.d("Lan=", sPref.getString(LANGUAGE, "").toString());
