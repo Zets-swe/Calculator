@@ -16,13 +16,24 @@
     <string name="nav_item_sprayballs">Sprayballs</string>
     <string name="nav_item_poultry">Poultry</string>
     <string name="btn_pipes_flowD_text">Flow, m/s the diameter of the pipe</string>
+
     <string name="tv_pipes_flowD_flow">Flow,\nm3/h</string>
     <string name="tv_pipes_flowD_Diameter">Diameter of the pipe,\nmm</string>
-    <string name="tv_pipes_flowD_m_s">m/s</string>
-    <string name="tv_pipes_flowD_l_m">l/min</string>
-    <string name="tv_pipes_flowD_l_s">l/s</string>
+    <string name="tv_pipes_flowD_m_s">Flow,\nm/s</string>
+    <string name="tv_pipes_flowD_l_m">Flow,\nl/min</string>
+    <string name="tv_pipes_flowD_l_s">Flow,\nl/s</string>
     <string name="btn_text_calculate">Calculate</string>
-
     <string name="btn_pipes_flowV_text">Flow, m3/h the speed of the flow</string>
+    <string name="gv_pipes_flowV_header_min_flow_text">Minimal flow, m3/h \n(for 1.5 m/s)</string>
+    <string name="gv_pipes_flowV_header_max_flow_text">Maximal flow, m3/h \n(for 2 m/s)</string>
+
+    <string name="btn_pipes_flowS_text">The volume of solution in the pipe</string>
+    <string name="tv_pipe_length">Pipe length, m</string>
+    <string name="tv_pipe_volume">The volume of 1m pipe</string>
+    <string name="tv_pipe_solution_volume">The volume of solution in the pipe, l</string>
+    <string name="btn_pipes_flowT_text">Volume, depending on flow and time</string>
+    <string name="tv_pipes_flowT_period">Period,\ns</string>
+    <string name="tv_pipes_flowT_reps">Number of repetitions</string>
+    <string name="tv_pipes_flowT_amount">Amount of the losses,\nl</string>
 
 </resources>

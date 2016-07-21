@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/tv_table_row_3_column_1"
+        style="@style/table_text"/>
+
+    <TextView
+        android:id="@+id/tv_table_row_3_column_2"
+        style="@style/table_text"/>
+
+    <TextView
+        android:id="@+id/tv_table_row_3_column_3"
+        style="@style/table_text"/>
+
+</LinearLayout>
