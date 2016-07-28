@@ -14,16 +14,12 @@
 
         <Button
             android:id="@+id/btn_pipes_flowD"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/button_main"
             android:text="@string/btn_pipes_flowD_text" />
 
         <LinearLayout
             android:id="@+id/L_pipes_flowD"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
+            style="@style/notes_view">
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -71,49 +67,34 @@
 
                     <EditText
                         android:id="@+id/et_pipes_flowD_flow"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:ems="1"
+                        style="@style/editText"
                         android:hint="0"
                         android:inputType="number|numberDecimal" />
 
                     <EditText
                         android:id="@+id/et_pipes_flowD_diameter"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:ems="1"
+                        style="@style/editText"
                         android:hint="0"
                         android:inputType="number|numberDecimal" />
 
                     <EditText
                         android:id="@+id/et_pipes_flowD_m_s"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        style="@style/editText"
                         android:editable="true"
-                        android:ems="1"
                         android:enabled="false"
                         android:inputType="number" />
 
                     <EditText
                         android:id="@+id/et_pipes_flowD_l_min"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        style="@style/editText"
                         android:editable="true"
-                        android:ems="1"
                         android:enabled="false"
                         android:inputType="number" />
 
                     <EditText
                         android:id="@+id/et_pipes_flowD_l_s"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        style="@style/editText"
                         android:editable="true"
-                        android:ems="1"
                         android:enabled="false"
                         android:inputType="number" />
                 </TableRow>
@@ -121,27 +102,20 @@
 
             <Button
                 android:id="@+id/btn_pipes_flowD_calculate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/colorAccent"
-                android:text="@string/btn_text_calculate" />
+                style="@style/button_calculate"/>
 
         </LinearLayout>
 
 
         <Button
             android:id="@+id/btn_pipes_flowV"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/btn_pipes_flowV_text" />
+            style="@style/button_main"
+            android:text="@string/btn_pipes_flowV_text"
+            android:visibility="visible" />
 
         <LinearLayout
             android:id="@+id/L_pipes_flowV"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
+            style="@style/notes_view">
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -177,42 +151,25 @@
 
                     <EditText
                         android:id="@+id/et_pipes_flowV_diameter"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:ems="1"
+                        style="@style/editText"
                         android:hint="0"
                         android:inputType="number|numberDecimal" />
 
                     <EditText
                         android:id="@+id/et_pipes_flowV_m_s"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:ems="1"
+                        style="@style/editText"
                         android:hint="0"
                         android:inputType="number|numberDecimal" />
 
                     <EditText
                         android:id="@+id/et_pipes_flowV_m3_h"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        style="@style/editText"
                         android:editable="true"
-                        android:ems="1"
                         android:enabled="false"
                         android:inputType="number" />
 
                 </TableRow>
             </TableLayout>
-
-            <Button
-                android:id="@+id/btn_pipes_flowV_calculate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/colorAccent"
-                android:text="@string/btn_text_calculate" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -239,21 +196,21 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal" />
 
+            <Button
+                android:id="@+id/btn_pipes_flowV_calculate"
+                style="@style/button_calculate"/>
+
         </LinearLayout>
 
 
         <Button
             android:id="@+id/btn_pipes_flowS"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/button_main"
             android:text="@string/btn_pipes_flowS_text" />
 
         <LinearLayout
             android:id="@+id/L_pipes_flowS"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
+            style="@style/notes_view">
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -293,39 +250,27 @@
 
                     <EditText
                         android:id="@+id/et_pipes_flowS_pipe_lenght"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:ems="1"
+                        style="@style/editText"
                         android:hint="0"
                         android:inputType="number|numberDecimal" />
 
                     <EditText
                         android:id="@+id/et_pipes_flowS_diameter"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:ems="1"
+                        style="@style/editText"
                         android:hint="0"
                         android:inputType="number|numberDecimal" />
 
                     <EditText
                         android:id="@+id/et_pipes_flowS_volume"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        style="@style/editText"
                         android:editable="true"
-                        android:ems="1"
                         android:enabled="false"
                         android:inputType="number" />
 
                     <EditText
                         android:id="@+id/et_pipes_flowS_solution_volume"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        style="@style/editText"
                         android:editable="true"
-                        android:ems="1"
                         android:enabled="false"
                         android:inputType="number" />
 
@@ -334,11 +279,7 @@
 
             <Button
                 android:id="@+id/btn_pipes_flowS_calculate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/colorAccent"
-                android:text="@string/btn_text_calculate" />
+                style="@style/button_calculate"/>
 
 
         </LinearLayout>
@@ -346,16 +287,12 @@
 
         <Button
             android:id="@+id/btn_pipes_flowT"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/button_main"
             android:text="@string/btn_pipes_flowT_text" />
 
         <LinearLayout
             android:id="@+id/L_pipes_flowT"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="visible">
+            style="@style/notes_view">
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -395,38 +332,26 @@
 
                     <EditText
                         android:id="@+id/et_pipes_flowT_flow"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:ems="1"
+                        style="@style/editText"
                         android:hint="0"
                         android:inputType="number|numberDecimal" />
 
                     <EditText
                         android:id="@+id/et_pipes_flowT_period"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:ems="1"
+                        style="@style/editText"
                         android:hint="0"
                         android:inputType="number|numberDecimal" />
 
                     <EditText
                         android:id="@+id/et_pipes_flowT_reps"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:ems="1"
+                        style="@style/editText"
                         android:hint="0"
                         android:inputType="number|numberDecimal" />
 
                     <EditText
                         android:id="@+id/et_pipes_flowT_amount"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        style="@style/editText"
                         android:editable="true"
-                        android:ems="1"
                         android:enabled="false"
                         android:inputType="number" />
 
@@ -435,11 +360,7 @@
 
             <Button
                 android:id="@+id/btn_pipes_flowT_calculate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/colorAccent"
-                android:text="@string/btn_text_calculate" />
+                style="@style/button_calculate"/>
 
 
         </LinearLayout>

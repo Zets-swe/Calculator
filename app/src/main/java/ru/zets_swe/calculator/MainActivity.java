@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity
 
     FragmentPipes fragmentPipes;
     FragmentTanks fragmentTanks;
+    //TODO: Объявить остальные фрагменты
     FragmentAbout fragmentAbout;
 
     SharedPreferences sPref;
@@ -60,9 +61,11 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        drawer.openDrawer(GravityCompat.START);
 
         fragmentPipes = new FragmentPipes();
         fragmentTanks = new FragmentTanks();
+        //TODO: Добавить остальные фрагменты
         fragmentAbout = new FragmentAbout();
 
     }
@@ -122,15 +125,15 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_tanks) {
             fragmentTransaction.replace(R.id.container, fragmentTanks);
         } else if (id == R.id.nav_losses) {
-
+            //TODO: Добавить фрагмент
         } else if (id == R.id.nav_filler) {
-
+//TODO: Добавить фрагмент
         } else if (id == R.id.nav_bmm) {
-
+//TODO: Добавить фрагмент
         } else if (id == R.id.nav_sprayballs) {
-
+//TODO: Добавить фрагмент
         } else if (id == R.id.nav_poultry) {
-
+//TODO: Добавить фрагмент
         }
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();

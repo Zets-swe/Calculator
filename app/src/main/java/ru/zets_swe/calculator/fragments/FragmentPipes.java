@@ -352,8 +352,6 @@ public class FragmentPipes extends Fragment{
                 if (isEmpty(et_pipes_flowT_flow) || isEmpty(et_pipes_flowT_period) || isEmpty(et_pipes_flowT_reps)){
                     Toast.makeText(getActivity(), R.string.note_empty_field, Toast.LENGTH_LONG).show();
                 } else {
-                    //TODO: Расчеты...
-
                     double S = Double.parseDouble(et_pipes_flowT_flow.getText().toString());
                     double T = Double.parseDouble(et_pipes_flowT_period.getText().toString());
                     double N = Double.parseDouble(et_pipes_flowT_reps.getText().toString());
@@ -373,23 +371,12 @@ public class FragmentPipes extends Fragment{
 
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
         }
     }
 
-/*    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }*/
 
     @Override
     public void onDetach() {
@@ -397,19 +384,7 @@ public class FragmentPipes extends Fragment{
         mListener = null;
     }
 
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
 

@@ -12,7 +12,7 @@
     <string name="nav_item_tanks">Tanks</string>
     <string name="nav_item_losses">Losses</string>
     <string name="nav_item_filler">Filler</string>
-    <string name="nav_item_bmm">BMM</string>
+    <string name="nav_item_bmm">Bottle washer</string>
     <string name="nav_item_sprayballs">Sprayballs</string>
     <string name="nav_item_poultry">Poultry</string>
     <string name="btn_pipes_flowD_text">Flow, m/s the diameter of the pipe</string>
@@ -35,5 +35,19 @@
     <string name="tv_pipes_flowT_period">Period,\ns</string>
     <string name="tv_pipes_flowT_reps">Number of repetitions</string>
     <string name="tv_pipes_flowT_amount">Amount of the losses,\nl</string>
+    <string name="tv_tanks_the_flow_to_the_sink_tanks">The flow to the sink tanks</string>
+    <string name="tv_tanks_volume_of_the_solution_in_the_tank">Volume of the solution in the tank</string>
+    <string name="tv_tanks_diameter">The diameter of the tank,\nm</string>
+    <string name="tv_tanks_angle_spray">The angle of the spray,\ndeg</string>
+
+    <string name="tv_tanks_pollution_level">Pollution level</string>
+    <string name="tv_tanks_estimated_flow">The estimated flow,\nm3/h</string>
+    <string name="tv_tanks_cone_height">The height of the cone,\nm</string>
+    <string name="tv_tanks_cylinder_height">The height of the cylinder,\nm</string>
+    <string name="tv_tanks_volume_solution">The volume of the solution,\nm3</string>
+    <string name="pollution_level_easy">Easy</string>
+    <string name="pollution_level_medium">Medium</string>
+    <string name="pollution_level_hard">Hard</string>
+
 
 </resources>

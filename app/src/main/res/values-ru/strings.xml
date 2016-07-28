@@ -33,5 +33,19 @@
     <string name="tv_pipes_flowT_period">Время,\nс</string>
     <string name="tv_pipes_flowT_reps">Количество повторов</string>
     <string name="tv_pipes_flowT_amount">Объем потерь,\nл</string>
+    <string name="tv_tanks_volume_of_the_solution_in_the_tank">Расчет объема раствора в танке</string>
+    <string name="tv_tanks_the_flow_to_the_sink_tanks">Поток на мойку танка</string>
+    <string name="tv_tanks_angle_spray">Угол распыла,\nград.</string>
+    <string name="tv_tanks_diameter">Диаметр танка,\nм</string>
+
+    <string name="tv_tanks_pollution_level">Степень загрязнения</string>
+    <string name="tv_tanks_estimated_flow">Расчетный поток,\nм3/ч</string>
+    <string name="tv_tanks_cone_height">Высота конуса,\nм</string>
+    <string name="tv_tanks_cylinder_height">Высота цилиндра,\nм</string>
+    <string name="tv_tanks_volume_solution">Объем раствора,\nм3</string>
+    <string name="pollution_level_easy">Легкая</string>
+    <string name="pollution_level_medium">Средняя</string>
+    <string name="pollution_level_hard">Сильная</string>
+
 
 </resources>
