@@ -19,97 +19,85 @@
 
         <LinearLayout
             android:id="@+id/L_tanks_flow_wash"
-            style="@style/notes_view">
+            style="@style/notes_view"
+            android:visibility="gone">
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-                <TextView android:text="@string/tv_tanks_diameter"
-                    style="@style/table_text_vertical" />
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/tv_tanks_diameter" />
 
                 <EditText
                     android:id="@+id/et_tanksF_diameter"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="1"
+                    style="@style/editText_vertical"
                     android:hint="D"
-                    android:inputType="number|numberDecimal"
-                    android:layout_gravity="center_vertical"
-                    android:textAlignment="center"/>
+                    android:inputType="number|numberDecimal"/>
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-                <TextView android:text="@string/tv_tanks_angle_spray"
-                    style="@style/table_text_vertical"/>
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:layout_weight="2"
+                    android:text="@string/tv_tanks_angle_spray" />
 
                 <EditText
                     android:id="@+id/et_tanks_angle_spray"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="1"
+                    style="@style/editText_vertical"
                     android:hint="a"
-                    android:inputType="number|numberDecimal"
-                    android:layout_gravity="center_vertical"
-                    android:textAlignment="center"/>
+                    android:inputType="number|numberDecimal" />
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-                <TextView android:text="@string/tv_tanks_pollution_level"
-                    style="@style/table_text_vertical"/>
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/tv_tanks_pollution_level" />
 
                 <Spinner
+                    android:id="@+id/sp_tanks_pollution_level"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/sp_tanks_pollution_level"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
                     android:spinnerMode="dropdown"
-                    android:textAlignment="center"
-                    android:layout_weight="1" />
+                    android:textAlignment="center" />
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-                <TextView android:text="@string/tv_tanks_estimated_flow"
-                    style="@style/table_text_vertical"/>
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/tv_tanks_estimated_flow" />
 
                 <EditText
                     android:id="@+id/et_tanks_estimated_flow"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:editable="true"
-                    android:ems="1"
-                    android:enabled="false"
-                    android:inputType="number"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_vertical"
-                    android:textAlignment="center"/>
+                    style="@style/editText_vertical_calculate" />
             </LinearLayout>
 
             <ImageView
+                android:id="@+id/imageView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/imageView3"
                 android:layout_gravity="center"
                 android:src="@drawable/tank_flow_wash" />
 
             <Button
                 android:id="@+id/btn_tanks_flow_wash_calculate"
-                style="@style/button_calculate"/>
+                style="@style/button_calculate" />
 
         </LinearLayout>
 
@@ -123,83 +111,247 @@
             android:id="@+id/L_tanks_volume_solution"
             style="@style/notes_view">
 
-            <TableLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:baselineAligned="false"
-                android:shrinkColumns="0"
-                android:stretchColumns="*"
-                android:textAlignment="center">
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/tv_tanks_diameter" />
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center">
+                <EditText
+                    android:id="@+id/et_tanksV_diameter"
+                    style="@style/editText_vertical"
+                    android:hint="D"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
 
-                    <TextView
-                        style="@style/table_text"
-                        android:text="@string/tv_tanks_diameter" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-                    <TextView
-                        style="@style/table_text"
-                        android:text="@string/tv_tanks_cone_height" />
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/tv_tanks_cone_height" />
 
-                    <TextView
-                        style="@style/table_text"
-                        android:text="@string/tv_tanks_cylinder_height" />
+                <EditText
+                    android:id="@+id/et_tanks_cone_height"
+                    style="@style/editText_vertical"
+                    android:hint="h1"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
 
-                    <TextView
-                        style="@style/table_text"
-                        android:text="@string/tv_tanks_volume_solution" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-                </TableRow>
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/tv_tanks_cylinder_height" />
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/et_tanks_cylinder_height"
+                    style="@style/editText_vertical"
+                    android:hint="h2"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
 
-                    <EditText
-                        android:id="@+id/et_tanksV_diameter"
-                        style="@style/editText"
-                        android:hint="D"
-                        android:inputType="number|numberDecimal" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-                    <EditText
-                        android:id="@+id/et_tanks_cone_height"
-                        style="@style/editText"
-                        android:hint="h1"
-                        android:inputType="number|numberDecimal" />
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/tv_tanks_volume_solution" />
 
-                    <EditText
-                        android:id="@+id/et_tanks_cylinder_height"
-                        style="@style/editText"
-                        android:hint="h2"
-                        android:inputType="number|numberDecimal" />
+                <EditText
+                    android:id="@+id/et_tanks_volume_solution"
+                    style="@style/editText_vertical_calculate" />
 
-                    <EditText
-                        android:id="@+id/et_tanks_volume_solution"
-                        style="@style/editText"
-                        android:editable="true"
-                        android:enabled="false"
-                        android:inputType="number" />
-
-                </TableRow>
-            </TableLayout>
+            </LinearLayout>
 
             <ImageView
+                android:id="@+id/imageView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/imageView2"
                 android:layout_gravity="center"
                 android:src="@drawable/tank_volume" />
 
             <Button
                 android:id="@+id/btn_tanksF_volume_solution_calculate"
-                style="@style/button_calculate"/>
+                style="@style/button_calculate" />
 
 
         </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btn_tanks3"
+            style="@style/button_main"
+            android:text="@string/text_btn_tanks3_loss_CO2" />
+
+        <LinearLayout
+            android:id="@+id/L_tanks3"
+            style="@style/notes_view"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_tanks3_volume_tank" />
+
+                <EditText
+                    android:id="@+id/et_tanks3_volume_tank"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_tanks3_atmospheric_pressure" />
+
+                <EditText
+                    android:id="@+id/et_tanks3_atmospheric_pressure"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal"
+                    android:text="0.98" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_tanks3_pressure_in_tank" />
+
+                <EditText
+                    android:id="@+id/et_tanks3_pressure_in_tank"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_tanks3_concentration_naoh" />
+
+                <EditText
+                    android:id="@+id/et_tanks3_concentration_naoh"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_tanks3_quantity_of_caustic_beats" />
+
+                <EditText
+                    android:id="@+id/et_tanks3_quantity_of_caustic_beats"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_tanks3_net_impact" />
+
+                <EditText
+                    android:id="@+id/et_tanks3_net_impact"
+                    style="@style/editText_vertical" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_tanks3_temperature_in_tank" />
+
+                <EditText
+                    android:id="@+id/et_tanks3_temperature_in_tank"
+                    style="@style/editText_vertical" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/tv_losses_pressure_loss" />
+
+                <EditText
+                    android:id="@+id/et_tanks3_pressure_loss"
+                    style="@style/editText_vertical_calculate" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_tanks3_residual_pressure" />
+
+                <EditText
+                    android:id="@+id/et_tanks3_residual_pressure"
+                    style="@style/editText_vertical_calculate" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_tanks3_loss_CO2" />
+
+                <EditText
+                    android:id="@+id/et_tanks3_loss_CO2"
+                    style="@style/editText_vertical_calculate" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_tanks3_calculate"
+                style="@style/button_calculate" />
+
+        </LinearLayout>
+
 
 
     </LinearLayout>

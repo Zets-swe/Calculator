@@ -1,0 +1,857 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".fragments.FragmentLosses">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="6dp">
+
+        <!--Pressure loss-->
+        <Button
+            android:id="@+id/btn_losses_pressure_loss"
+            style="@style/button_main"
+            android:text="@string/btn_losses_pressure_loss" />
+
+        <LinearLayout
+            android:id="@+id/L_losses1"
+            style="@style/notes_view"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/tv_losses_flow_rate" />
+
+                <EditText
+                    android:id="@+id/et_losses1_flow_rate"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/tv_losses_height_of_the_static_pressure" />
+
+                <EditText
+                    android:id="@+id/et_losses1_pressure"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/tv_pipes_flowD_Diameter" />
+
+                <EditText
+                    android:id="@+id/et_losses1_pipe_diameter"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/tv_pipe_length" />
+
+                <EditText
+                    android:id="@+id/et_losses1_pipe_lenght"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/tv_losses_number_of_turns" />
+
+                <EditText
+                    android:id="@+id/et_losses1_turns"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/tv_losses_pressure_loss" />
+
+                <EditText
+                    android:id="@+id/et_losses1_pressure_loss"
+                    style="@style/editText_vertical_calculate" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_losses_pressure_loss_calculate"
+                style="@style/button_calculate" />
+
+        </LinearLayout>
+
+
+        <!--The loss of detergent-->
+        <Button
+            android:id="@+id/btn_losses2"
+            style="@style/button_main"
+            android:text="@string/btn_the_loss_of_detergent" />
+
+        <LinearLayout
+            android:id="@+id/L_losses2"
+            style="@style/notes_view"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses2_volume_circuit" />
+
+                <EditText
+                    android:id="@+id/et_losses2_volume_circuit"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses2_volume_tank_to_the_washing" />
+
+                <EditText
+                    android:id="@+id/et_losses2_volume_tank_to_the_washing"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_volume_tank_after_washing" />
+
+                <EditText
+                    android:id="@+id/et_losses2_volume_tank_after_washing"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses2_concentration_beginning_wash" />
+
+                <EditText
+                    android:id="@+id/et_losses2_concentration_beginning_wash"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses2_concentration_end_wash" />
+
+                <EditText
+                    android:id="@+id/et_losses2_concentration_end_wash"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses2_used_concentrate" />
+
+                <EditText
+                    android:id="@+id/et_losses2_used_concentrate"
+                    style="@style/editText_vertical_calculate" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses2_loss_detergent" />
+
+                <EditText
+                    android:id="@+id/et_losses2_loss_detergent"
+                    style="@style/editText_vertical_calculate" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_losses2_calculate"
+                style="@style/button_calculate" />
+
+        </LinearLayout>
+
+
+        <!--Losses of caustic soda-->
+        <Button
+            android:id="@+id/btn_losses3"
+            style="@style/button_main"
+            android:text="@string/text_btn_losses3_losses_of_caustic_soda" />
+
+        <LinearLayout
+            android:id="@+id/L_losses3"
+            style="@style/notes_view"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses2_volume_circuit" />
+
+                <EditText
+                    android:id="@+id/et_losses3_volume_circuit"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses2_volume_tank_to_the_washing" />
+
+                <EditText
+                    android:id="@+id/et_losses3_volume_tank_to_the_washing"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_volume_tank_after_washing" />
+
+                <EditText
+                    android:id="@+id/et_losses3_volume_tank_after_washing"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses2_concentration_beginning_wash" />
+
+                <EditText
+                    android:id="@+id/et_losses3_concentration_beginning_wash"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses2_concentration_end_wash" />
+
+                <EditText
+                    android:id="@+id/et_losses3_concentration_end_wash"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses2_used_concentrate" />
+
+                <EditText
+                    android:id="@+id/et_losses3_used_concentrate"
+                    style="@style/editText_vertical_calculate" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses2_loss_detergent" />
+
+                <EditText
+                    android:id="@+id/et_losses3_loss_detergent"
+                    style="@style/editText_vertical_calculate" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses3_concentrate_alkaline_detergent" />
+
+                <Spinner
+                    android:id="@+id/sp_losses3_concentrate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:spinnerMode="dropdown"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses3_loss_of_liquid_caustic" />
+
+                <EditText
+                    android:id="@+id/et_losses3_loss_of_liquid_caustic_kg"
+                    style="@style/editText_vertical_calculate" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses3_loss_of_liquid_caustic" />
+
+                <EditText
+                    android:id="@+id/et_losses3_loss_of_liquid_caustic_l"
+                    style="@style/editText_vertical_calculate" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_losses3_calculate"
+                style="@style/button_calculate" />
+
+        </LinearLayout>
+
+
+        <!--Losses of solution depending on flow and time-->
+        <Button
+            android:id="@+id/btn_losses4"
+            style="@style/button_main"
+            android:text="@string/text_btn_losses4" />
+
+        <LinearLayout
+            android:id="@+id/L_losses4"
+            style="@style/notes_view"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses4_flow_m3_h" />
+
+                <EditText
+                    android:id="@+id/et_losses4_flow_m3_h"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses4_period_s" />
+
+                <EditText
+                    android:id="@+id/et_losses4_period_s"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses4_number_of_repetition" />
+
+                <EditText
+                    android:id="@+id/et_losses4_number_of_repetition"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal"
+                    android:text="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses4_cost_of_water_rub_m3" />
+
+                <EditText
+                    android:id="@+id/et_losses4_cost_of_water_rub_m3"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal"
+                    android:text="15" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses4_cost_of_drains_rub_m3" />
+
+                <EditText
+                    android:id="@+id/et_losses4_cost_of_drains_rub_m3"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal"
+                    android:text="11" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses4_the_number_of_washes_per_year" />
+
+                <EditText
+                    android:id="@+id/et_losses4_the_number_of_washes_per_year"
+                    style="@style/editText_vertical" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses4_amount_of_the_losses_l" />
+
+                <EditText
+                    android:id="@+id/et_losses4_amount_of_the_losses_l"
+                    style="@style/editText_vertical_calculate" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses4_loss_cycle_rub" />
+
+                <EditText
+                    android:id="@+id/et_losses4_loss_cycle_rub"
+                    style="@style/editText_vertical_calculate" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses4_loss_per_year_rub" />
+
+                <EditText
+                    android:id="@+id/et_losses4_loss_per_year_rub"
+                    style="@style/editText_vertical_calculate" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_losses4_calculate"
+                style="@style/button_calculate" />
+
+        </LinearLayout>
+
+
+        <!--Heat loss calculation-->
+
+        <Button
+            android:id="@+id/btn_losses5"
+            style="@style/button_main"
+            android:text="@string/text_btn_losses5" />
+
+        <LinearLayout
+            android:id="@+id/L_losses5"
+            style="@style/notes_view">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/text_tv_losses5_warming"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:layout_margin="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses5_water_volume_m3" />
+
+                <EditText
+                    android:id="@+id/et_losses5_water_volume_m3"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses5_water_temperature_deg" />
+
+                <EditText
+                    android:id="@+id/et_losses5_water_temperature_deg"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses5_required_water_temperature_deg" />
+
+                <EditText
+                    android:id="@+id/et_losses5_required_water_temperature_deg"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses5_boiler_productivity" />
+
+                <EditText
+                    android:id="@+id/et_losses5_boiler_productivity"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal"
+                    android:text="90" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses5_energy_source" />
+
+                <Spinner
+                    android:id="@+id/sp_losses5_energy_source"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:spinnerMode="dropdown"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses5_spent_energy_kw" />
+
+                <EditText
+                    android:id="@+id/et_losses5W_spent_energy_kw"
+                    style="@style/editText_vertical_calculate" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses5_spent_fuel_kg" />
+
+                <EditText
+                    android:id="@+id/et_losses5W_spent_fuel_kg"
+                    style="@style/editText_vertical_calculate" />
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/text_tv_losses5_heating"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:layout_margin="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses5flow_rate_m3" />
+
+                <EditText
+                    android:id="@+id/et_losses5flow_rate_m3"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses5period_min" />
+
+                <EditText
+                    android:id="@+id/et_losses5period_min"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses5_temperature_beginning_heating" />
+
+                <EditText
+                    android:id="@+id/et_losses5_temperature_beginning_heating"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses5_temperature_of_heating_deg" />
+
+                <EditText
+                    android:id="@+id/et_losses5_temperature_of_heating_deg"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses5_spent_energy_kw" />
+
+                <EditText
+                    android:id="@+id/et_losses5H_spent_energy_kw"
+                    style="@style/editText_vertical_calculate" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses5_spent_fuel_kg" />
+
+                <EditText
+                    android:id="@+id/et_losses5H_spent_fuel_kg"
+                    style="@style/editText_vertical_calculate" />
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/text_tv_losses5_the_total_amount_of_energy_spent_fuel"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:layout_margin="10dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses5_total_amount_energy1" />
+
+                <EditText
+                    android:id="@+id/et_losses5_total_amount_energy_1"
+                    style="@style/editText_vertical_calculate" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses5_total_amount_energy2" />
+
+                <EditText
+                    android:id="@+id/et_losses5_total_amount_energy_2"
+                    style="@style/editText_vertical_calculate" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_losses5_total_amount_fuel" />
+
+                <EditText
+                    android:id="@+id/et_losses5_total_amount_fuel"
+                    style="@style/editText_vertical_calculate" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_losses5_calculate"
+                style="@style/button_calculate" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

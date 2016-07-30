@@ -20,6 +20,7 @@ import android.widget.Toast;
 import java.util.Locale;
 
 import ru.zets_swe.calculator.fragments.FragmentAbout;
+import ru.zets_swe.calculator.fragments.FragmentLosses;
 import ru.zets_swe.calculator.fragments.FragmentPipes;
 import ru.zets_swe.calculator.fragments.FragmentTanks;
 
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity
 
     FragmentPipes fragmentPipes;
     FragmentTanks fragmentTanks;
+    FragmentLosses fragmentLosses;
+
     //TODO: Объявить остальные фрагменты
     FragmentAbout fragmentAbout;
 
@@ -41,7 +44,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         sPref = getPreferences(MODE_PRIVATE);
-        String lang = sPref.getString(LANGUAGE, Locale.getDefault().getDisplayLanguage().toString());
+        String lang = sPref.getString(LANGUAGE, Locale.getDefault().getLanguage());
         Toast.makeText(MainActivity.this, lang, Toast.LENGTH_SHORT).show();
         Locale myLoc = new Locale(lang, lang.toUpperCase());
         config.locale = myLoc;
@@ -65,6 +68,7 @@ public class MainActivity extends AppCompatActivity
 
         fragmentPipes = new FragmentPipes();
         fragmentTanks = new FragmentTanks();
+        fragmentLosses = new FragmentLosses();
         //TODO: Добавить остальные фрагменты
         fragmentAbout = new FragmentAbout();
 
@@ -125,7 +129,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_tanks) {
             fragmentTransaction.replace(R.id.container, fragmentTanks);
         } else if (id == R.id.nav_losses) {
-            //TODO: Добавить фрагмент
+            fragmentTransaction.replace(R.id.container, fragmentLosses);
         } else if (id == R.id.nav_filler) {
 //TODO: Добавить фрагмент
         } else if (id == R.id.nav_bmm) {

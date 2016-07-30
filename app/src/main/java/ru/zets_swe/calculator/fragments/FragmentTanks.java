@@ -34,6 +34,7 @@ public class FragmentTanks extends Fragment {
     //****************************************
     LinearLayout L_tanks_flow_wash;
     LinearLayout L_tanks_volume_solution;
+    LinearLayout L_tanks3;
 
 
     //Раздел объявления Button
@@ -43,6 +44,9 @@ public class FragmentTanks extends Fragment {
 
     Button btn_tanksF_volume_solution;
     Button btn_tanksF_volume_solution_calculate;
+
+    Button btn_tanks3;
+    Button btn_tanks3_calculate;
 
 
     // Раздел объявления EditText и Spinner
@@ -56,6 +60,17 @@ public class FragmentTanks extends Fragment {
     EditText et_tanks_cone_height;
     EditText et_tanks_cylinder_height;
     EditText et_tanks_volume_solution;
+
+    EditText et_tanks3_volume_tank;
+    EditText et_tanks3_atmospheric_pressure;
+    EditText et_tanks3_pressure_in_tank;
+    EditText et_tanks3_concentration_naoh;
+    EditText et_tanks3_quantity_of_caustic_beats;
+    EditText et_tanks3_net_impact;
+    EditText et_tanks3_temperature_in_tank;
+    EditText et_tanks3_pressure_loss;
+    EditText et_tanks3_residual_pressure;
+    EditText et_tanks3_loss_CO2;
 
 
     public FragmentTanks() {
@@ -124,11 +139,7 @@ public class FragmentTanks extends Fragment {
         btn_tanks_flow_wash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (L_tanks_flow_wash.getVisibility() == View.VISIBLE) {
-                    hide(L_tanks_flow_wash);
-                } else {
-                    show(L_tanks_flow_wash);
-                }
+                switchVisibility(L_tanks_flow_wash);
 
             }
         });
@@ -191,11 +202,7 @@ public class FragmentTanks extends Fragment {
         btn_tanksF_volume_solution.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (L_tanks_volume_solution.getVisibility() == View.VISIBLE) {
-                    hide(L_tanks_volume_solution);
-                } else {
-                    show(L_tanks_volume_solution);
-                }
+                switchVisibility(L_tanks_volume_solution);
 
             }
         });
@@ -213,6 +220,71 @@ public class FragmentTanks extends Fragment {
                     double V = (D*D)*0.001571+pi*D*H2*0.002+0.002*0.785398*D*(Math.sqrt((D*D+H1*H1)));
 
                     et_tanks_volume_solution.setText(String.valueOf(String.format("%.3f", V)));
+
+                }
+
+            }
+        });
+
+        //endregion
+
+
+
+        //region Расчет углекислоты
+
+        //Раздел инициализации Layout
+        //****************************************
+        L_tanks3 = (LinearLayout) rootView.findViewById(R.id.L_tanks3);
+
+
+        // Раздел инициализации Button
+        //****************************************
+        btn_tanks3 = (Button) rootView.findViewById(R.id.btn_tanks3);
+        btn_tanks3_calculate = (Button) rootView.findViewById(R.id.btn_tanks3_calculate);
+
+
+        // Раздел инициализации EditText и Spinner
+        //****************************************
+        et_tanks3_volume_tank = (EditText) rootView.findViewById(R.id.et_tanks3_volume_tank);
+        et_tanks3_atmospheric_pressure = (EditText) rootView.findViewById(R.id.et_tanks3_atmospheric_pressure);
+        et_tanks3_pressure_in_tank = (EditText) rootView.findViewById(R.id.et_tanks3_pressure_in_tank);
+        et_tanks3_concentration_naoh = (EditText) rootView.findViewById(R.id.et_tanks3_concentration_naoh);
+        et_tanks3_quantity_of_caustic_beats = (EditText) rootView.findViewById(R.id.et_tanks3_quantity_of_caustic_beats);
+        et_tanks3_net_impact = (EditText) rootView.findViewById(R.id.et_tanks3_net_impact);
+        et_tanks3_temperature_in_tank = (EditText) rootView.findViewById(R.id.et_tanks3_temperature_in_tank);
+        et_tanks3_pressure_loss = (EditText) rootView.findViewById(R.id.et_tanks3_pressure_loss);
+        et_tanks3_residual_pressure = (EditText) rootView.findViewById(R.id.et_tanks3_residual_pressure);
+        et_tanks3_loss_CO2 = (EditText) rootView.findViewById(R.id.et_tanks3_loss_CO2);
+
+        btn_tanks3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switchVisibility(L_tanks3);
+            }
+        });
+
+        btn_tanks3_calculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (isEmpty(et_tanks3_volume_tank) || isEmpty(et_tanks3_atmospheric_pressure) || isEmpty(et_tanks3_pressure_in_tank) || isEmpty(et_tanks3_concentration_naoh) || isEmpty(et_tanks3_quantity_of_caustic_beats) || isEmpty(et_tanks3_net_impact) || isEmpty(et_tanks3_temperature_in_tank)) {
+                    Toast.makeText(getActivity(), R.string.note_empty_field, Toast.LENGTH_LONG).show();
+                } else {
+                    double V = Double.parseDouble(et_tanks3_volume_tank.getText().toString());
+                    double P = Double.parseDouble(et_tanks3_atmospheric_pressure.getText().toString());
+                    double P1 = Double.parseDouble(et_tanks3_pressure_in_tank.getText().toString());
+                    double C = Double.parseDouble(et_tanks3_concentration_naoh.getText().toString());
+                    double n = Double.parseDouble(et_tanks3_quantity_of_caustic_beats.getText().toString());
+                    double V1 = Double.parseDouble(et_tanks3_net_impact.getText().toString());
+                    double t = Double.parseDouble(et_tanks3_temperature_in_tank.getText().toString());
+
+                    double m = C/100*1000*n*V1*100/40;
+                    double Pl = m*8.314*(273+t)/V/100000;
+                    double Po = P1+P-Pl;
+                    double Cl = 44*m/1000;
+
+                    et_tanks3_pressure_loss.setText(String.valueOf(String.format("%.2f", Pl)));
+                    et_tanks3_residual_pressure.setText(String.valueOf(String.format("%.2f", Po)));
+                    et_tanks3_loss_CO2.setText(String.valueOf(String.format("%.2f", Cl)));
 
                 }
 
@@ -243,18 +315,16 @@ public class FragmentTanks extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
-    // To animate view slide out from top to bottom
-    public void show(View view) {
-        view.startAnimation(anim_show);
-        view.setVisibility(View.VISIBLE);
+
+    public void switchVisibility(View view){
+        if (view.getVisibility() == View.VISIBLE) {
+            view.setVisibility(View.GONE);
+        } else {
+            view.startAnimation(anim_show);
+            view.setVisibility(View.VISIBLE);
+        }
     }
 
-    // To animate view slide out from bottom to top
-    public void hide(View view) {
-/*        view.startAnimation(anim_hide);
-        view.setVisibility(View.INVISIBLE);*/
-        view.setVisibility(View.GONE);
-    }
 
     public boolean isEmpty(EditText et) {
         if (et.getText().toString().equals("")) {
@@ -263,5 +333,4 @@ public class FragmentTanks extends Fragment {
             return false;
         }
     }
-
 }
