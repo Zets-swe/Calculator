@@ -576,13 +576,8 @@
             style="@style/notes_view">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/text_tv_losses5_warming"
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                android:layout_margin="10dp" />
+                style="@style/text_header"
+                android:text="@string/text_tv_losses5_warming" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -696,13 +691,8 @@
 
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/text_tv_losses5_heating"
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                android:layout_margin="10dp" />
+                style="@style/text_header"
+                android:text="@string/text_tv_losses5_heating"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -796,13 +786,8 @@
 
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/text_tv_losses5_the_total_amount_of_energy_spent_fuel"
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                android:layout_margin="10dp" />
+                style="@style/text_header"
+                android:text="@string/text_tv_losses5_the_total_amount_of_energy_spent_fuel"/>
 
 
             <LinearLayout

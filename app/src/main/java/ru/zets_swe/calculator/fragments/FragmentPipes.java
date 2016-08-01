@@ -26,7 +26,6 @@ import ru.zets_swe.calculator.R;
 
 public class FragmentPipes extends Fragment{
 
-    private OnFragmentInteractionListener mListener;
 
     public static final double pi = 3.1415926535;
     String[] diameter_table = {"20", "25", "50", "63", "65", "74", "80", "100", "120", "150", "200"};
@@ -369,23 +368,6 @@ public class FragmentPipes extends Fragment{
 
         return rootView;
 
-    }
-
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
-
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
-    public interface OnFragmentInteractionListener {
-        void onFragmentInteraction(Uri uri);
     }
 
     // To animate view slide out from top to bottom

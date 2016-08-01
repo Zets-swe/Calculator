@@ -20,8 +20,11 @@ import android.widget.Toast;
 import java.util.Locale;
 
 import ru.zets_swe.calculator.fragments.FragmentAbout;
+import ru.zets_swe.calculator.fragments.FragmentBottleWasher;
+import ru.zets_swe.calculator.fragments.FragmentFiller;
 import ru.zets_swe.calculator.fragments.FragmentLosses;
 import ru.zets_swe.calculator.fragments.FragmentPipes;
+import ru.zets_swe.calculator.fragments.FragmentPoultry;
 import ru.zets_swe.calculator.fragments.FragmentTanks;
 
 public class MainActivity extends AppCompatActivity
@@ -30,6 +33,10 @@ public class MainActivity extends AppCompatActivity
     FragmentPipes fragmentPipes;
     FragmentTanks fragmentTanks;
     FragmentLosses fragmentLosses;
+    FragmentFiller fragmentFiller;
+    FragmentBottleWasher fragmentBottleWasher;
+
+    FragmentPoultry fragmentPoultry;
 
     //TODO: Объявить остальные фрагменты
     FragmentAbout fragmentAbout;
@@ -69,6 +76,10 @@ public class MainActivity extends AppCompatActivity
         fragmentPipes = new FragmentPipes();
         fragmentTanks = new FragmentTanks();
         fragmentLosses = new FragmentLosses();
+        fragmentFiller = new FragmentFiller();
+        fragmentBottleWasher = new FragmentBottleWasher();
+
+        fragmentPoultry = new FragmentPoultry();
         //TODO: Добавить остальные фрагменты
         fragmentAbout = new FragmentAbout();
 
@@ -131,13 +142,13 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_losses) {
             fragmentTransaction.replace(R.id.container, fragmentLosses);
         } else if (id == R.id.nav_filler) {
-//TODO: Добавить фрагмент
+            fragmentTransaction.replace(R.id.container, fragmentFiller);
         } else if (id == R.id.nav_bmm) {
-//TODO: Добавить фрагмент
+            fragmentTransaction.replace(R.id.container, fragmentBottleWasher);
         } else if (id == R.id.nav_sprayballs) {
 //TODO: Добавить фрагмент
         } else if (id == R.id.nav_poultry) {
-//TODO: Добавить фрагмент
+            fragmentTransaction.replace(R.id.container, fragmentPoultry);
         }
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();

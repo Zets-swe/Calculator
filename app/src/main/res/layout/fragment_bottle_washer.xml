@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="ru.zets_swe.calculator.fragments.FragmentBottleWasher">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="6dp">
+
+        <Button
+            android:id="@+id/btn_bottle_washer1"
+            style="@style/button_main"
+            android:text="@string/text_btn_bottle_washer1" />
+
+        <LinearLayout
+            android:id="@+id/L_bottle_washer1"
+            style="@style/notes_view"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/text_header"
+                android:text="@string/text_tv_bottle_washer1_header_based_on_the_performance_of_the_pump" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_bottle_washer1_productivity_l_h" />
+
+                <EditText
+                    android:id="@+id/et_bottle_washer1_1_productivity_l_h"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_bottle_washer1_the_outer_volume_l" />
+
+                <EditText
+                    android:id="@+id/et_bottle_washer1_the_outer_volume_l"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_bottle_washer1_time_dosage_s" />
+
+                <EditText
+                    android:id="@+id/et_bottle_washer1_1_time_dosage_s"
+                    style="@style/editText_vertical_calculate" />
+            </LinearLayout>
+
+
+            <TextView
+                style="@style/text_header"
+                android:text="@string/text_tv_bottle_washer1_header_calculation_actual_time_of_dosing" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_bottle_washer1_time_dosage_s" />
+
+                <EditText
+                    android:id="@+id/et_bottle_washer1_2_time_dosage_s"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_bottle_washer1_the_past_volume_of_concentrate_ml" />
+
+                <EditText
+                    android:id="@+id/et_bottle_washer1_the_past_volume_of_concentrate_ml"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_bottle_washer1_productivity_l_h" />
+
+                <EditText
+                    android:id="@+id/et_bottle_washer1_2_productivity_l_h"
+                    style="@style/editText_vertical_calculate" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_bottle_washer1_calculate"
+                style="@style/button_calculate" />
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btn_bottle_washer2"
+            style="@style/button_main"
+            android:text="@string/text_btn_bottle_washer2" />
+
+        <LinearLayout
+            android:id="@+id/L_bottle_washer2"
+            style="@style/notes_view"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_bottle_washer2_manufacture" />
+
+                <Spinner
+                    android:id="@+id/sp_bottle_washer2_manufacture"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:spinnerMode="dropdown"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_bottle_washer2_the_amount_of_alkaline_baths_m3" />
+
+                <EditText
+                    android:id="@+id/et_bottle_washer2_the_amount_of_alkaline_baths_m3"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_bottle_washer2_the_volume_of_the_bath_hot_rinsing_m3" />
+
+                <EditText
+                    android:id="@+id/et_bottle_washer2_the_volume_of_the_bath_hot_rinsing_m3"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_bottle_washer2_the_volume_of_the_bath_warm_rinse_m3" />
+
+                <EditText
+                    android:id="@+id/et_bottle_washer2_the_volume_of_the_bath_warm_rinse_m3"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_bottle_washer2_water_consumption_m3_h" />
+
+                <EditText
+                    android:id="@+id/et_bottle_washer2_water_consumption_m3_h"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_bottle_washer2_the_nominal_performance_of_the_bottle_washer_b_h" />
+
+                <EditText
+                    android:id="@+id/et_bottle_washer2_the_nominal_performance_of_the_bottle_washer_b_h"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_bottle_washer2_the_average_performance_of_the_bottle_washer_b_h" />
+
+                <EditText
+                    android:id="@+id/et_bottle_washer2_the_average_performance_of_the_bottle_washer_b_h"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_bottle_washer2_the_transfer_of_the_caustic_in_the_bottle_ml" />
+
+                <EditText
+                    android:id="@+id/et_bottle_washer2_the_transfer_of_the_caustic_in_the_bottle_ml"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal"
+                    android:text="15" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_bottle_washer2_while_working_in_bmm_month_h" />
+
+                <EditText
+                    android:id="@+id/et_bottle_washer2_while_working_in_bmm_month_h"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal"
+                    android:text="400" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_bottle_washer2_the_number_of_hours_per_shift_h" />
+
+                <EditText
+                    android:id="@+id/et_bottle_washer2_the_number_of_hours_per_shift_h"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal"
+                    android:text="11.5" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_bottle_washer2_the_concentration_of_amp_washing" />
+
+                <EditText
+                    android:id="@+id/et_bottle_washer2_the_concentration_of_amp_washing"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal"
+                    android:text="0.2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_bottle_washer2_the_concentration_of_antifoam" />
+
+                <EditText
+                    android:id="@+id/et_bottle_washer2_the_concentration_of_antifoam"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal"
+                    android:text="0.02" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_bottle_washer2_the_concentration_of_antikiller" />
+
+                <EditText
+                    android:id="@+id/et_bottle_washer2_the_concentration_of_antikiller"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal"
+                    android:text="0.015" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_bottle_washer2_the_concentration_of_the_disinfectant" />
+
+                <EditText
+                    android:id="@+id/et_bottle_washer2_the_concentration_of_the_disinfectant"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal"
+                    android:text="0.0025" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/text_header"
+                    android:text="@string/text_tv_bottle_washer2_one_time_loading_capacity_kg" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/table_text_vertical"
+                        android:text="@string/text_tv_bottle_washer2_amplifier" />
+
+                    <EditText
+                        android:id="@+id/et_bottle_washer2_Vu1"
+                        style="@style/editText_vertical"
+                        android:inputType="number|numberDecimal" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/table_text_vertical"
+                        android:text="@string/text_tv_bottle_washer2_antifoam" />
+
+                    <EditText
+                        android:id="@+id/et_bottle_washer2_Vd1"
+                        style="@style/editText_vertical"
+                        android:inputType="number|numberDecimal" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/text_header"
+                    android:text="@string/text_tv_bottle_washer2_consumption_per_hour_kg" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/table_text_vertical"
+                        android:text="@string/text_tv_bottle_washer2_amplifier" />
+
+                    <EditText
+                        android:id="@+id/et_bottle_washer2_Vu2"
+                        style="@style/editText_vertical"
+                        android:inputType="number|numberDecimal" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/table_text_vertical"
+                        android:text="@string/text_tv_bottle_washer2_antifoam" />
+
+                    <EditText
+                        android:id="@+id/et_bottle_washer2_Vd2"
+                        style="@style/editText_vertical"
+                        android:inputType="number|numberDecimal" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/table_text_vertical"
+                        android:text="@string/text_tv_bottle_washer2_antikiller" />
+
+                    <EditText
+                        android:id="@+id/et_bottle_washer2_Va2"
+                        style="@style/editText_vertical"
+                        android:inputType="number|numberDecimal" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/table_text_vertical"
+                        android:text="@string/text_tv_bottle_washer2_disinfectant" />
+
+                    <EditText
+                        android:id="@+id/et_bottle_washer2_Vp2"
+                        style="@style/editText_vertical"
+                        android:inputType="number|numberDecimal" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/text_header"
+                    android:text="@string/text_tv_bottle_washer2_rate_per_shift_kg" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/table_text_vertical"
+                        android:text="@string/text_tv_bottle_washer2_amplifier" />
+
+                    <EditText
+                        android:id="@+id/et_bottle_washer2_Vu3"
+                        style="@style/editText_vertical"
+                        android:inputType="number|numberDecimal" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/table_text_vertical"
+                        android:text="@string/text_tv_bottle_washer2_antifoam" />
+
+                    <EditText
+                        android:id="@+id/et_bottle_washer2_Vd3"
+                        style="@style/editText_vertical"
+                        android:inputType="number|numberDecimal" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/table_text_vertical"
+                        android:text="@string/text_tv_bottle_washer2_antikiller" />
+
+                    <EditText
+                        android:id="@+id/et_bottle_washer2_Va3"
+                        style="@style/editText_vertical"
+                        android:inputType="number|numberDecimal" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/table_text_vertical"
+                        android:text="@string/text_tv_bottle_washer2_disinfectant" />
+
+                    <EditText
+                        android:id="@+id/et_bottle_washer2_Vp3"
+                        style="@style/editText_vertical"
+                        android:inputType="number|numberDecimal" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/text_header"
+                    android:text="@string/text_tv_bottle_washer2_rate_per_month_kg" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/table_text_vertical"
+                        android:text="@string/text_tv_bottle_washer2_amplifier" />
+
+                    <EditText
+                        android:id="@+id/et_bottle_washer2_Vu4"
+                        style="@style/editText_vertical"
+                        android:inputType="number|numberDecimal" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/table_text_vertical"
+                        android:text="@string/text_tv_bottle_washer2_antifoam" />
+
+                    <EditText
+                        android:id="@+id/et_bottle_washer2_Vd4"
+                        style="@style/editText_vertical"
+                        android:inputType="number|numberDecimal" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/table_text_vertical"
+                        android:text="@string/text_tv_bottle_washer2_antikiller" />
+
+                    <EditText
+                        android:id="@+id/et_bottle_washer2_Va4"
+                        style="@style/editText_vertical"
+                        android:inputType="number|numberDecimal" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/table_text_vertical"
+                        android:text="@string/text_tv_bottle_washer2_disinfectant" />
+
+                    <EditText
+                        android:id="@+id/et_bottle_washer2_Vp4"
+                        style="@style/editText_vertical"
+                        android:inputType="number|numberDecimal" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_bottle_washer2_calculate"
+                style="@style/button_calculate" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>

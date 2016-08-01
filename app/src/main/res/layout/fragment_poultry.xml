@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+tools:context="ru.zets_swe.calculator.fragments.FragmentPoultry">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="6dp">
+
+    <Button
+        android:id="@+id/btn_poultry"
+        style="@style/button_main"
+        android:text="@string/text_btn_poultry" />
+
+    <LinearLayout
+        android:id="@+id/L_poultry"
+        style="@style/notes_view"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/table_text_vertical"
+                android:text="@string/text_tv_poultry_slaughter_carcasses_h" />
+
+            <EditText
+                android:id="@+id/et_poultry_slaughter_carcasses_h"
+                style="@style/editText_vertical"
+                android:inputType="number|numberDecimal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/table_text_vertical"
+                android:text="@string/text_tv_poultry_work_shift_h" />
+
+            <EditText
+                android:id="@+id/et_poultry_work_shift_h"
+                style="@style/editText_vertical"
+                android:inputType="number|numberDecimal"
+                android:text="20" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/table_text_vertical"
+                android:text="@string/text_tv_poultry_concentration" />
+
+            <EditText
+                android:id="@+id/et_poultry_concentration"
+                style="@style/editText_vertical"
+                android:inputType="number|numberDecimal"
+                android:text="0.06" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/table_text_vertical"
+                android:text="@string/text_tv_poultry_the_cost_of_df_rub_kg" />
+
+            <EditText
+                android:id="@+id/et_poultry_the_cost_of_df_rub_kg"
+                style="@style/editText_vertical"
+                android:inputType="number|numberDecimal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/table_text_vertical"
+                android:text="@string/text_tv_poultry_the_bath_volume_m3" />
+
+            <EditText
+                android:id="@+id/et_poultry_the_bath_volume_m3"
+                style="@style/editText_vertical"
+                android:inputType="number|numberDecimal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/table_text_vertical"
+                android:text="@string/text_tv_poultry_makeup_water_m3_h" />
+
+            <EditText
+                android:id="@+id/et_poultry_makeup_water_m3_h"
+                style="@style/editText_vertical"
+                android:inputType="number|numberDecimal" />
+        </LinearLayout>
+
+
+        <TextView
+            style="@style/text_header"
+            android:text="@string/text_tv_header_poultry_tub_screw" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/table_text_vertical"
+                android:text="@string/text_tv_poultry_concentration_ppm" />
+
+            <EditText
+                android:id="@+id/et_poultry_concentration_ppm"
+                style="@style/editText_vertical_calculate"
+                android:inputType="number|numberDecimal" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/table_text_vertical"
+                android:text="@string/text_tv_poultry_the_consumption_of_df_filling_kg" />
+
+            <EditText
+                android:id="@+id/et_poultry_the_consumption_of_df_filling_kg"
+                style="@style/editText_vertical_calculate"
+                android:inputType="number|numberDecimal" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/table_text_vertical"
+                android:text="@string/text_tv_poultry_the_cost_of_filling_rub" />
+
+            <EditText
+                android:id="@+id/et_poultry_the_cost_of_filling_rub"
+                style="@style/editText_vertical_calculate"
+                android:inputType="number|numberDecimal" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/table_text_vertical"
+                android:text="@string/text_tv_poultry_product_consumption_per_day_kg" />
+
+            <EditText
+                android:id="@+id/et_poultry_product_consumption_per_day_kg"
+                style="@style/editText_vertical_calculate"
+                android:inputType="number|numberDecimal" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/table_text_vertical"
+                android:text="@string/text_tv_poultry_the_cost_of_day_work_rub" />
+
+            <EditText
+                android:id="@+id/et_poultry_the_cost_of_day_work_rub"
+                style="@style/editText_vertical_calculate"
+                android:inputType="number|numberDecimal" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/table_text_vertical"
+                android:text="@string/text_tv_poultry_processing_cost_rub_carcass" />
+
+            <EditText
+                android:id="@+id/et_poultry_processing_cost_rub_carcass"
+                style="@style/editText_vertical_calculate"
+                android:inputType="number|numberDecimal" />
+        </LinearLayout>
+
+
+        <TextView
+            style="@style/text_header"
+            android:text="@string/text_tv_header_poultry_injector" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/table_text_vertical"
+                android:text="@string/text_tv_poultry_concentration_ppm" />
+
+            <EditText
+                android:id="@+id/et_poultry_concentration_ppm1"
+                style="@style/editText_vertical_calculate"
+                android:inputType="number|numberDecimal" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/table_text_vertical"
+                android:text="@string/text_tv_poultry_product_consumption_per_day_kg" />
+
+            <EditText
+                android:id="@+id/et_poultry_product_consumption_per_day_kg1"
+                style="@style/editText_vertical_calculate"
+                android:inputType="number|numberDecimal" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/table_text_vertical"
+                android:text="@string/text_tv_poultry_the_cost_of_day_work_rub" />
+
+            <EditText
+                android:id="@+id/et_poultry_the_cost_of_day_work_rub1"
+                style="@style/editText_vertical_calculate"
+                android:inputType="number|numberDecimal" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/table_text_vertical"
+                android:text="@string/text_tv_poultry_processing_cost_rub_carcass" />
+
+            <EditText
+                android:id="@+id/et_poultry_processing_cost_rub_carcass1"
+                style="@style/editText_vertical_calculate"
+                android:inputType="number|numberDecimal" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_poultry_calculate"
+            style="@style/button_calculate" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
+</ScrollView>

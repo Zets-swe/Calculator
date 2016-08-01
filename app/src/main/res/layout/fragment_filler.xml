@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+tools:context="ru.zets_swe.calculator.fragments.FragmentFiller">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="6dp">
+
+
+    <Button
+        android:id="@+id/btn_filler"
+        style="@style/button_main"
+        android:text="@string/text_btn_filler" />
+
+    <LinearLayout
+        android:id="@+id/L_filler"
+        style="@style/notes_view"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/table_text_vertical"
+                android:text="@string/text_tv_filler_the_number_of_filling_heads" />
+
+            <EditText
+                android:id="@+id/et_filler_the_number_of_filling_heads"
+                style="@style/editText_vertical"
+                android:inputType="number|numberDecimal"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/table_text_vertical"
+                android:text="@string/text_tv_filler_optimal_flow_m3_h" />
+
+            <EditText
+                android:id="@+id/et_filler_optimal_flow_m3_h"
+                style="@style/editText_vertical_calculate" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/table_text_vertical"
+                android:text="@string/text_tv_filler_a_compromise_flow_m3_h" />
+
+            <EditText
+                android:id="@+id/et_filler_a_compromise_flow_m3_h"
+                style="@style/editText_vertical_calculate" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_filler_calculate"
+            style="@style/button_calculate" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
+</ScrollView>

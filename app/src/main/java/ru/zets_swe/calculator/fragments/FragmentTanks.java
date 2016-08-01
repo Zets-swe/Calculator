@@ -23,7 +23,6 @@ import ru.zets_swe.calculator.R;
 
 public class FragmentTanks extends Fragment {
 
-    private OnFragmentInteractionListener mListener;
 
     public static final double pi = 3.1415926535;
 
@@ -295,24 +294,6 @@ public class FragmentTanks extends Fragment {
 
 
         return rootView;
-    }
-
-
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
-
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
-    public interface OnFragmentInteractionListener {
-        void onFragmentInteraction(Uri uri);
     }
 
 
