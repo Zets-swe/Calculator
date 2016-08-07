@@ -10,7 +10,7 @@
     <string name="nav_item_tanks">Танки</string>
     <string name="navigation_drawer_close">Закрыть список</string>
     <string name="navigation_drawer_open">Открыть список</string>
-    <string name="action_language">Язык</string>
+    <string name="action_language">English</string>
     <string name="action_about">О программе</string>
     <string name="text_about"><b>О программе</b> \nВсе права  на данную программу принадлежат разработчикам: \nВоронков Николай \nТымчук Александр \n\nДанное программное обеспечение распространяется бесплатно. Копирование, изменение и распространение без уведомления разработчиков запрещено. Использование в коммерческих целях запрещено. \n\nВсе пожелания и замечания отправлять на почту voronkov.n@list.ru.</string>
     <string name="btn_pipes_flowD_text">Поток, м/с от диаметра трубы</string>
@@ -124,7 +124,7 @@
     <string name="text_tv_bottle_washer1_header_based_on_the_performance_of_the_pump">Расчет по известной производительности насоса</string>
     <string name="text_tv_bottle_washer1_header_calculation_actual_time_of_dosing">Расчет по фактическому времени дозировки (БММ)</string>
     <string name="text_tv_bottle_washer1_productivity_l_h">Производительность, л/ч</string>
-    <string name="text_tv_bottle_washer1_the_outer_volume_l">Наружный объем, л</string>
+    <string name="text_tv_bottle_washer1_the_outer_volume_l">Необходимый объем, л</string>
     <string name="text_tv_bottle_washer1_time_dosage_s">Время дозировки, с</string>
     <string name="text_tv_bottle_washer1_the_past_volume_of_concentrate_ml">Ушедший объем концентрата, мл</string>
     <string name="text_btn_bottle_washer2">Расчет добавок в БММ</string>
@@ -168,5 +168,15 @@
     <string name="text_tv_poultry_processing_cost_rub_carcass">Стоимость обработки, руб/тушку</string>
     <string name="text_tv_header_poultry_tub_screw">Ванна, шнек</string>
     <string name="text_tv_header_poultry_injector">Форсунки</string>
+    <string name="text_btn_sprayballs1">Расчет расположения головки</string>
+    <string name="text_tv_sprayballs_the_angle_of_the_spray_deg">Угол распыла головки, град.</string>
+    <string name="text_tv_sprayballs_the_diameter_of_the_tank_m">Диаметр танка, м</string>
+    <string name="text_tv_sprayballs_the_depth_of_the_sphere_m">Глубина сферы, м</string>
+    <string name="text_tv_sprayballs_rod_lenhgt_sprayball_m">Длина штанги головки, м</string>
+    <string name="text_tv_sprayballs_choose_the_type">Выбрать тип</string>
+    <string name="text_tv_sprayballs_specify_the_angle">Указать угол</string>
+    <string name="text_tv_sprayballs_diameter_of_the_tank_m">Диаметр танка, м</string>
+    <string name="text_tv_sprayballs_work_flow_m3_h">Рабочий поток, м3/ч</string>
+
 
 </resources>

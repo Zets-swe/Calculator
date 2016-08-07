@@ -7,7 +7,7 @@
 
     <string name="action_about">About</string>
     <string name="text_about">Licence</string>
-    <string name="action_language">Language</string>
+    <string name="action_language">Русский язык</string>
     <string name="nav_item_pipes">Pipes</string>
     <string name="nav_item_tanks">Tanks</string>
     <string name="nav_item_losses">Losses</string>
@@ -127,7 +127,7 @@
 
     <string name="text_btn_bottle_washer1">Time dosage pump</string>
     <string name="text_tv_bottle_washer1_productivity_l_h">Productivity, l/h</string>
-    <string name="text_tv_bottle_washer1_the_outer_volume_l">The outer volume, l</string>
+    <string name="text_tv_bottle_washer1_the_outer_volume_l">Requried volume, l</string>
     <string name="text_tv_bottle_washer1_time_dosage_s">Time dosage, s</string>
     <string name="text_tv_bottle_washer1_header_based_on_the_performance_of_the_pump">Based on the performance of the pump</string>
     <string name="text_tv_bottle_washer1_header_calculation_actual_time_of_dosing">Calculation of the actual time of dosing (bottle washing)</string>
@@ -173,6 +173,15 @@
     <string name="text_tv_poultry_processing_cost_rub_carcass">Processing cost, RUB/carcass</string>
     <string name="text_tv_header_poultry_tub_screw">Tub, screw</string>
     <string name="text_tv_header_poultry_injector">Injector</string>
+    <string name="text_btn_sprayballs1">The location of the sprayball</string>
+    <string name="text_tv_sprayballs_the_depth_of_the_sphere_m">The depth of the sphere, m</string>
+    <string name="text_tv_sprayballs_the_diameter_of_the_tank_m">The diameter of the tank, m</string>
+    <string name="text_tv_sprayballs_the_angle_of_the_spray_deg">The angle of the spray, deg.</string>
+    <string name="text_tv_sprayballs_rod_lenhgt_sprayball_m">Rod lenhgt sprayball, m</string>
+    <string name="text_tv_sprayballs_choose_the_type">Choose the type</string>
+    <string name="text_tv_sprayballs_specify_the_angle">Specify the angle</string>
+    <string name="text_tv_sprayballs_diameter_of_the_tank_m">Diameter of the tank, m</string>
+    <string name="text_tv_sprayballs_work_flow_m3_h">Work flow, m3/h</string>
 
 
 </resources>

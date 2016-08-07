@@ -35,6 +35,9 @@ public class FragmentTanks extends Fragment {
     LinearLayout L_tanks_volume_solution;
     LinearLayout L_tanks3;
 
+    LinearLayout[] layouts = new LinearLayout[3];
+
+
 
     //Раздел объявления Button
     //****************************************
@@ -292,18 +295,20 @@ public class FragmentTanks extends Fragment {
 
         //endregion
 
+        layouts[0] = L_tanks_flow_wash;
+        layouts[1] = L_tanks_volume_solution;
+        layouts[2] = L_tanks3;
 
         return rootView;
+
     }
 
-
-    public void switchVisibility(View view){
-        if (view.getVisibility() == View.VISIBLE) {
-            view.setVisibility(View.GONE);
-        } else {
-            view.startAnimation(anim_show);
-            view.setVisibility(View.VISIBLE);
+    public void switchVisibility(View view) {
+        for (LinearLayout i : layouts) {
+            i.setVisibility(View.GONE);
         }
+        view.startAnimation(anim_show);
+        view.setVisibility(View.VISIBLE);
     }
 
 

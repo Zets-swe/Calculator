@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="ru.zets_swe.calculator.fragments.FragmentSprayballs">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="6dp">
+
+        <Button
+            android:id="@+id/btn_sprayballs1"
+            style="@style/button_main"
+            android:text="@string/text_btn_sprayballs1" />
+
+        <LinearLayout
+            android:id="@+id/L_sprayballs1"
+            style="@style/notes_view">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_sprayballs_the_depth_of_the_sphere_m" />
+
+                <EditText
+                    android:id="@+id/et_sprayballs_the_depth_of_the_sphere_m"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal"
+                    android:hint="h" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_sprayballs_the_diameter_of_the_tank_m" />
+
+                <EditText
+                    android:id="@+id/et_sprayballs_the_diameter_of_the_tank_m"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal"
+                    android:hint="D" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_sprayballs_the_angle_of_the_spray_deg" />
+
+                <EditText
+                    android:id="@+id/et_sprayballs_the_angle_of_the_spray_deg"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal"
+                    android:hint="α" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_sprayballs_rod_lenhgt_sprayball_m" />
+
+                <EditText
+                    android:id="@+id/et_sprayballs_rod_lenhgt_sprayball_m"
+                    style="@style/editText_vertical_calculate"
+                    android:hint="H" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/tank_sprayball" />
+
+            <Button
+                android:id="@+id/btn_sprayballs1_calculate"
+                style="@style/button_calculate" />
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btn_sprayballs2"
+            style="@style/button_main"
+            android:text="Подбор головки" />
+
+        <LinearLayout
+            android:id="@+id/L_sprayballs2"
+            style="@style/notes_view"
+            android:visibility="gone">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_sprayballs_choose_the_type" />
+
+                <Spinner
+                    android:id="@+id/sp_sprayballs_choose_the_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:spinnerMode="dropdown"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:text="@string/text_tv_sprayballs_specify_the_angle" />
+
+                <Spinner
+                    android:id="@+id/sp_sprayballs_specify_the_angle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:spinnerMode="dropdown"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:layout_weight="2"
+                    android:text="@string/text_tv_sprayballs_diameter_of_the_tank_m" />
+
+                <EditText
+                    android:id="@+id/et_sprayballs_diameter_of_the_tank_m"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/table_text_vertical"
+                    android:layout_weight="2"
+                    android:text="@string/text_tv_sprayballs_work_flow_m3_h" />
+
+                <EditText
+                    android:id="@+id/et_sprayballs_work_flow_m3_h"
+                    style="@style/editText_vertical"
+                    android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_sprayballs2_calculate"
+                style="@style/button_calculate" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>

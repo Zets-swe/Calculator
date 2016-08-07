@@ -29,7 +29,7 @@ public class FragmentPipes extends Fragment{
 
     public static final double pi = 3.1415926535;
     String[] diameter_table = {"20", "25", "50", "63", "65", "74", "80", "100", "120", "150", "200"};
-    String[] min_flow_table = {"1.7", "2.7", "10.6", "16.8", "1.9", "23.2", "27.1", "42.4", "61.1", "95.4", "169.6"};
+    String[] min_flow_table = {"1.7", "2.7", "10.6", "16.8", "17.9", "23.2", "27.1", "42.4", "61.1", "95.4", "169.6"};
     String[] max_flow_table = {"2.3", "3.5", "14.1", "22.4", "23.9", "31.0", "36.2", "56.5", "81.4", "127.2", "226.2"};
 
 
@@ -42,6 +42,8 @@ public class FragmentPipes extends Fragment{
     LinearLayout L_pipes_flowV;
     LinearLayout L_pipes_flowS;
     LinearLayout L_pipes_flowT;
+
+    LinearLayout[] layouts = new LinearLayout[4];
 
 
 
@@ -130,11 +132,7 @@ public class FragmentPipes extends Fragment{
         btn_pipes_flowD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(L_pipes_flowD.getVisibility() == View.VISIBLE){
-                    hide(L_pipes_flowD);
-                } else {
-                    show(L_pipes_flowD);
-                }
+                switchVisibility(L_pipes_flowD);
 
             }
         });
@@ -188,11 +186,7 @@ public class FragmentPipes extends Fragment{
         btn_pipes_flowV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(L_pipes_flowV.getVisibility() == View.VISIBLE){
-                    hide(L_pipes_flowV);
-                } else {
-                    show(L_pipes_flowV);
-                }
+switchVisibility(L_pipes_flowV);
 
             }
         });
@@ -283,11 +277,7 @@ public class FragmentPipes extends Fragment{
         btn_pipes_flowS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(L_pipes_flowS.getVisibility() == View.VISIBLE){
-                    hide(L_pipes_flowS);
-                } else {
-                    show(L_pipes_flowS);
-                }
+switchVisibility(L_pipes_flowS);
 
             }
         });
@@ -337,11 +327,7 @@ public class FragmentPipes extends Fragment{
         btn_pipes_flowT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(L_pipes_flowT.getVisibility() == View.VISIBLE){
-                    hide(L_pipes_flowT);
-                } else {
-                    show(L_pipes_flowT);
-                }
+switchVisibility(L_pipes_flowT);
 
             }
         });
@@ -365,22 +351,22 @@ public class FragmentPipes extends Fragment{
         //endregion
 
 
+        layouts[0] = L_pipes_flowD;
+        layouts[1] = L_pipes_flowV;
+        layouts[2] = L_pipes_flowS;
+        layouts[3] = L_pipes_flowT;
+
 
         return rootView;
 
     }
 
-    // To animate view slide out from top to bottom
-    public void show(View view){
+    public void switchVisibility(View view) {
+        for (LinearLayout i : layouts) {
+            i.setVisibility(View.GONE);
+        }
         view.startAnimation(anim_show);
         view.setVisibility(View.VISIBLE);
-    }
-
-    // To animate view slide out from bottom to top
-    public void hide(View view){
-/*        view.startAnimation(anim_hide);
-        view.setVisibility(View.INVISIBLE);*/
-        view.setVisibility(View.GONE);
     }
 
     public boolean isEmpty(EditText et){

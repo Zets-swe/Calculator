@@ -30,6 +30,7 @@ public class FragmentBottleWasher extends Fragment {
     LinearLayout L_bottle_washer1;
     LinearLayout L_bottle_washer2;
 
+    LinearLayout[] layouts = new LinearLayout[2];
 
     //Раздел объявления Button
     //****************************************
@@ -272,19 +273,19 @@ public class FragmentBottleWasher extends Fragment {
 
         //endregion
 
+        layouts[0] = L_bottle_washer1;
+        layouts[1] = L_bottle_washer2;
 
         return rootView;
 
     }
 
-
     public void switchVisibility(View view) {
-        if (view.getVisibility() == View.VISIBLE) {
-            view.setVisibility(View.GONE);
-        } else {
-            view.startAnimation(anim_show);
-            view.setVisibility(View.VISIBLE);
+        for (LinearLayout i : layouts) {
+            i.setVisibility(View.GONE);
         }
+        view.startAnimation(anim_show);
+        view.setVisibility(View.VISIBLE);
     }
 
 

@@ -3,10 +3,8 @@ package ru.zets_swe.calculator;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -17,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import java.io.File;
 import java.util.Locale;
 
 import ru.zets_swe.calculator.fragments.FragmentAbout;
@@ -25,6 +24,7 @@ import ru.zets_swe.calculator.fragments.FragmentFiller;
 import ru.zets_swe.calculator.fragments.FragmentLosses;
 import ru.zets_swe.calculator.fragments.FragmentPipes;
 import ru.zets_swe.calculator.fragments.FragmentPoultry;
+import ru.zets_swe.calculator.fragments.FragmentSprayballs;
 import ru.zets_swe.calculator.fragments.FragmentTanks;
 
 public class MainActivity extends AppCompatActivity
@@ -35,10 +35,8 @@ public class MainActivity extends AppCompatActivity
     FragmentLosses fragmentLosses;
     FragmentFiller fragmentFiller;
     FragmentBottleWasher fragmentBottleWasher;
-
+    FragmentSprayballs fragmentSprayballs;
     FragmentPoultry fragmentPoultry;
-
-    //TODO: Объявить остальные фрагменты
     FragmentAbout fragmentAbout;
 
     SharedPreferences sPref;
@@ -77,10 +75,9 @@ public class MainActivity extends AppCompatActivity
         fragmentTanks = new FragmentTanks();
         fragmentLosses = new FragmentLosses();
         fragmentFiller = new FragmentFiller();
+        fragmentSprayballs = new FragmentSprayballs();
         fragmentBottleWasher = new FragmentBottleWasher();
-
         fragmentPoultry = new FragmentPoultry();
-        //TODO: Добавить остальные фрагменты
         fragmentAbout = new FragmentAbout();
 
     }
@@ -146,7 +143,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_bmm) {
             fragmentTransaction.replace(R.id.container, fragmentBottleWasher);
         } else if (id == R.id.nav_sprayballs) {
-//TODO: Добавить фрагмент
+            fragmentTransaction.replace(R.id.container, fragmentSprayballs);
         } else if (id == R.id.nav_poultry) {
             fragmentTransaction.replace(R.id.container, fragmentPoultry);
         }

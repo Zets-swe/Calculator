@@ -31,6 +31,7 @@ public class FragmentLosses extends Fragment {
     LinearLayout L_losses4;
     LinearLayout L_losses5;
 
+    LinearLayout[] layouts = new LinearLayout[5];
 
     //Раздел объявления Button
     //****************************************
@@ -105,8 +106,6 @@ public class FragmentLosses extends Fragment {
     EditText et_losses5_total_amount_fuel;
 
 
-
-
     public FragmentLosses() {
     }
 
@@ -169,22 +168,22 @@ public class FragmentLosses extends Fragment {
                     double n = Double.parseDouble(et_losses1_turns.getText().toString());
                     double dP;
                     double x;
-                    double x1 = ((V*1000)/3600)*3300000;
+                    double x1 = ((V * 1000) / 3600) * 3300000;
                     double x2 = Math.pow(D, 2.63);
                     double x4;
-                    if (D < 50){
+                    if (D < 50) {
                         x4 = 146;
                     } else {
                         x4 = 149;
                     }
-                    double x3 = Math.pow((x1/(x2*x4)), 1.852);
+                    double x3 = Math.pow((x1 / (x2 * x4)), 1.852);
 
-                    if (D == 0){
+                    if (D == 0) {
                         x = 0;
-                    }else if(D < 70){
-                        x = x3*0.0981*(n+L)/100;
-                    }else {
-                        x= x3*0.0981*((n*1.5)+L)/100;
+                    } else if (D < 70) {
+                        x = x3 * 0.0981 * (n + L) / 100;
+                    } else {
+                        x = x3 * 0.0981 * ((n * 1.5) + L) / 100;
                     }
 
                     if (x == 0) {
@@ -245,8 +244,8 @@ public class FragmentLosses extends Fragment {
                     double V2 = Double.parseDouble(et_losses2_volume_tank_after_washing.getText().toString());
                     double C1 = Double.parseDouble(et_losses2_concentration_beginning_wash.getText().toString());
                     double C2 = Double.parseDouble(et_losses2_concentration_end_wash.getText().toString());
-                    double P = ((V1*C1)/100)-((V2*C2)/100);
-                    double L = (P/((V*C1)/100))*100;
+                    double P = ((V1 * C1) / 100) - ((V2 * C2) / 100);
+                    double L = (P / ((V * C1) / 100)) * 100;
 
                     et_losses2_used_concentrate.setText(String.valueOf(String.format("%.2f", P)));
                     et_losses2_loss_detergent.setText(String.valueOf(String.format("%.2f", L)));
@@ -311,13 +310,13 @@ public class FragmentLosses extends Fragment {
                     double V2 = Double.parseDouble(et_losses3_volume_tank_after_washing.getText().toString());
                     double C1 = Double.parseDouble(et_losses3_concentration_beginning_wash.getText().toString());
                     double C2 = Double.parseDouble(et_losses3_concentration_end_wash.getText().toString());
-                    double P = ((V1*C1)/100)-((V2*C2)/100);
-                    double L = (P/((V*C1)/100))*100;
+                    double P = ((V1 * C1) / 100) - ((V2 * C2) / 100);
+                    double L = (P / ((V * C1) / 100)) * 100;
 
                     double CC = Double.parseDouble(sp_losses3_concentrate.getSelectedItem().toString());
                     double s;
                     int pos = sp_losses3_concentrate.getSelectedItemPosition();
-                    switch (pos)  {
+                    switch (pos) {
                         case 0:
                             s = 1.22;
                             break;
@@ -338,8 +337,8 @@ public class FragmentLosses extends Fragment {
                             s = 1.43;
                     }
 
-                    double Lk = (((V1*C1)/100)-((V2*C2)/100)/CC)*100;
-                    double Lm = Lk/s;
+                    double Lk = (((V1 * C1) / 100) - ((V2 * C2) / 100) / CC) * 100;
+                    double Lm = Lk / s;
 
                     et_losses3_used_concentrate.setText(String.valueOf(String.format("%.2f", P)));
                     et_losses3_loss_detergent.setText(String.valueOf(String.format("%.2f", L)));
@@ -399,14 +398,14 @@ public class FragmentLosses extends Fragment {
                     double p2 = Double.parseDouble(et_losses4_cost_of_drains_rub_m3.getText().toString());
                     double N1 = Double.parseDouble(et_losses4_the_number_of_washes_per_year.getText().toString());
 
-                    double V = S*1000*T*N/3600;
-                    double p3 = V*(p1+p2)/1000;
-                    double p4 = p3*N1;
+                    double V = S * 1000 * T * N / 3600;
+                    double p3 = V * (p1 + p2) / 1000;
+                    double p4 = p3 * N1;
 
 
-                    et_losses4_amount_of_the_losses_l.setText(String.valueOf(String.format("%.2f", V)));
-                    et_losses4_loss_cycle_rub.setText(String.valueOf(String.format("%.2f", p3)));
-                    et_losses4_loss_per_year_rub.setText(String.valueOf(String.format("%.2f", p4)));
+                    et_losses4_amount_of_the_losses_l.setText(String.valueOf(String.format("%.0f", V)));
+                    et_losses4_loss_cycle_rub.setText(String.valueOf(String.format("%.0f", p3)));
+                    et_losses4_loss_per_year_rub.setText(String.valueOf(String.format("%.0f", p4)));
 
                 }
 
@@ -449,7 +448,6 @@ public class FragmentLosses extends Fragment {
         et_losses5_total_amount_fuel = (EditText) rootView.findViewById(R.id.et_losses5_total_amount_fuel);
 
 
-
         String[] energy_source = {getString(R.string.text_sp_losses5_energy_sources0), getString(R.string.text_sp_losses5_energy_sources1), getString(R.string.text_sp_losses5_energy_sources2), getString(R.string.text_sp_losses5_energy_sources3), getString(R.string.text_sp_losses5_energy_sources4), getString(R.string.text_sp_losses5_energy_sources5), getString(R.string.text_sp_losses5_energy_sources6), getString(R.string.text_sp_losses5_energy_sources7), getString(R.string.text_sp_losses5_energy_sources8), getString(R.string.text_sp_losses5_energy_sources9), getString(R.string.text_sp_losses5_energy_sources10), getString(R.string.text_sp_losses5_energy_sources11), getString(R.string.text_sp_losses5_energy_sources12), getString(R.string.text_sp_losses5_energy_sources13), getString(R.string.text_sp_losses5_energy_sources14)};
         final String[] energy_cal = {"4780", "7880", "6900", "3500", "8900", "27000", "20500", "4200", "7600", "10025", "10290", "9915", "7500", "8380", "860"};
 
@@ -479,18 +477,18 @@ public class FragmentLosses extends Fragment {
                     double m = Double.parseDouble(et_losses5_boiler_productivity.getText().toString());
                     int pos = sp_losses5_energy_source.getSelectedItemPosition();
                     double Kl = Double.parseDouble(energy_cal[pos]);
-                    double E1 = (100*1000*V*(T2-T1))/m;
-                    double M1 = E1/Kl;
+                    double E1 = (100 * 1000 * V * (T2 - T1)) / m;
+                    double M1 = E1 / Kl;
 
                     double P = Double.parseDouble(et_losses5flow_rate_m3.getText().toString());
                     double t = Double.parseDouble(et_losses5period_min.getText().toString());
                     double Tn = Double.parseDouble(et_losses5_temperature_beginning_heating.getText().toString());
                     double Tp = Double.parseDouble(et_losses5_temperature_of_heating_deg.getText().toString());
-                    double E2 = (100*16.667*P*t*(Tp-Tn))/m;
-                    double M2 = E2/Kl;
+                    double E2 = (100 * 16.667 * P * t * (Tp - Tn)) / m;
+                    double M2 = E2 / Kl;
 
-                    double E = E1+E2; //Ккал
-                    double Ed = (E/4.1840)/1000; //МДж
+                    double E = E1 + E2; //Ккал
+                    double Ed = (E / 4.1840) / 1000; //МДж
                     double M = M1 + M2; //кг
 
                     et_losses5W_spent_energy_kw.setText(String.valueOf(String.format("%.2f", E1)));
@@ -508,17 +506,22 @@ public class FragmentLosses extends Fragment {
 
         //endregion
 
+        layouts[0] = L_losses1;
+        layouts[1] = L_losses2;
+        layouts[2] = L_losses3;
+        layouts[3] = L_losses4;
+        layouts[4] = L_losses5;
+
         return rootView;
     }
 
 
-    public void switchVisibility(View view){
-        if (view.getVisibility() == View.VISIBLE) {
-            view.setVisibility(View.GONE);
-        } else {
-            view.startAnimation(anim_show);
-            view.setVisibility(View.VISIBLE);
+    public void switchVisibility(View view) {
+        for (LinearLayout i : layouts) {
+            i.setVisibility(View.GONE);
         }
+        view.startAnimation(anim_show);
+        view.setVisibility(View.VISIBLE);
     }
 
 
