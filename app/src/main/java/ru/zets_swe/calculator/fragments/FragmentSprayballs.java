@@ -79,11 +79,6 @@ public class FragmentSprayballs extends Fragment {
 
         Activity activity = getActivity();
         sprayballs = new Sprayballs(activity);
-        try {
-            sprayballs.readCSV();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
         //**Тестовый раздел**
 

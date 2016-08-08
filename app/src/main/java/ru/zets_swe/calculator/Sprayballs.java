@@ -11,6 +11,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.BufferedReader;
@@ -26,70 +27,67 @@ public class Sprayballs {
     List<Ball> sprayballs = new ArrayList<>();
     Activity resourceProvider;
     private String fileName = "sprayballs.csv";
-    private String filePath = "ZetsStorage";
-    private File mFile;
-    private String mData = "";
+    InputStream sourceFile;
+    File destFile;
 
     public Sprayballs(Activity activity) {
         this.resourceProvider = activity;
-    }
-
-
-    public void readCSV() throws IOException {
-        InputStream inputStream = resourceProvider.getResources().openRawResource(R.raw.sprayballs);
-
-        InputStreamReader isr = new InputStreamReader(inputStream);
-        BufferedReader reader = new BufferedReader(isr);
-        String line;
-        StringBuilder builder = new StringBuilder();
-
-        try {
-            while ((line = reader.readLine()) != null) {
-                builder.append(line + "\n");
+        this.sourceFile = resourceProvider.getResources().openRawResource(R.raw.sprayballs);
+        this.destFile = new File(Environment.getExternalStorageDirectory().getPath() + "/" + fileName);
+        if(!destFile.exists()) {
+            try {
+                this.copyCSV();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
         }
-
         try {
-            inputStream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        //System.out.println("Данные из файла::" + builder.toString());
-
-        mFile = new File(resourceProvider.getExternalFilesDir(null), fileName);
-        try {
-            FileOutputStream fos = new FileOutputStream(mFile);
-            fos.write(builder.toString().getBytes());
-            fos.close();
+            this.readCSV();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
 
+    public void copyCSV() throws IOException {
+            InputStreamReader isr = new InputStreamReader(sourceFile);
+            BufferedReader reader = new BufferedReader(isr);
+            String line;
+            StringBuilder builder = new StringBuilder();
 
+            try {
+                while ((line = reader.readLine()) != null) {
+                    builder.append(line + "\n");
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
-/*
+            try {
+                sourceFile.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                FileOutputStream fos = new FileOutputStream(destFile);
+                fos.write(builder.toString().getBytes());
+                fos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+    }
+
 
     public void readCSV() throws IOException {
-        //Сохраняем таблицу из ресурсов на карту памяти
-        Resources r = resourceProvider.getResources();
-        InputStream inputStream = r.openRawResource(R.raw.sprayballs);
-        InputStreamReader isr = new InputStreamReader(inputStream);
-        BufferedReader reader = new BufferedReader(isr);
 
-*/
-/*        // открываем файл
-        BufferedReader reader = new BufferedReader(new FileReader("sprayballs.csv"));
-        // считываем построчно*//*
-
+        // открываем файл
+        BufferedReader reader = new BufferedReader(new FileReader(Environment.getExternalStorageDirectory().getPath() + "/" + fileName));
+        // считываем построчно
         String line = null;
         Scanner scanner = null;
         int index = 0;
-
         while ((line = reader.readLine()) != null) {
             Ball ball = new Ball();
             scanner = new Scanner(line);
@@ -166,14 +164,14 @@ public class Sprayballs {
             }
             index = 0;
             sprayballs.add(ball);
+            System.out.println("add ball " + sprayballs.size());
         }
-
+        reader.close();
         Log.w("Строка из шаров",sprayballs.get(3).getFactory());
         System.out.println(sprayballs.get(3).getFactory());
         //закрываем наш ридер
-        reader.close();
+
     }
 
-*/
 
 }
