@@ -177,6 +177,14 @@
     <string name="text_tv_sprayballs_specify_the_angle">Указать угол</string>
     <string name="text_tv_sprayballs_diameter_of_the_tank_m">Диаметр танка, м</string>
     <string name="text_tv_sprayballs_work_flow_m3_h">Рабочий поток, м3/ч</string>
+    <string name="text_tv_sprayballs_mark">Марка</string>
+    <string name="text_tv_sprayballs_series">Серия</string>
 
+    <string name="settings">Настройки</string>
+    <string name="text_tv_settings_language_settings">Настройки языка</string>
+    <string name="text_tv_settings_update_base">Обновить базу</string>
+    <string name="btn_text_install">Установить</string>
+    <string name="text_tv_sprayballs_choose_file">Выбрать файл</string>
+    <string name="text_tv_sprayballs_download_from_web">Загрузить с сайта</string>
 
 </resources>

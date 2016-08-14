@@ -11,9 +11,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import ru.zets_swe.calculator.OwnWatcher;
 import ru.zets_swe.calculator.R;
 
 public class FragmentLosses extends Fragment {
@@ -32,6 +34,7 @@ public class FragmentLosses extends Fragment {
     LinearLayout L_losses5;
 
     LinearLayout[] layouts = new LinearLayout[5];
+
 
     //Раздел объявления Button
     //****************************************
@@ -377,6 +380,8 @@ public class FragmentLosses extends Fragment {
         et_losses4_amount_of_the_losses_l = (EditText) rootView.findViewById(R.id.et_losses4_amount_of_the_losses_l);
         et_losses4_loss_cycle_rub = (EditText) rootView.findViewById(R.id.et_losses4_loss_cycle_rub);
         et_losses4_loss_per_year_rub = (EditText) rootView.findViewById(R.id.et_losses4_loss_per_year_rub);
+
+        et_losses4_the_number_of_washes_per_year.addTextChangedListener(new OwnWatcher());
 
         btn_losses4.setOnClickListener(new View.OnClickListener() {
             @Override

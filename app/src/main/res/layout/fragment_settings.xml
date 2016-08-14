@@ -1,0 +1,141 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ru.zets_swe.calculator.fragments.FragmentSettings">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorNoteBackground"
+        android:padding="6dp">
+
+        <TextView
+            style="@style/text_header"
+            android:text="@string/text_tv_settings_language_settings" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:padding="20dp">
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_russian_flag_24dp"
+                android:text="  Русский"
+                android:id="@+id/rb_sprayballs_rus" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_english_flag_24dp"
+                android:text="  English"
+                android:id="@+id/rb_sprayballs_eng" />
+        </RadioGroup>
+        <Button
+            android:id="@+id/btn_sprayballs_set_language"
+            style="@style/button_install" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp">
+
+            <View
+                android:layout_width="wrap_content"
+                android:background="@drawable/separator"
+                android:layout_height="1dp" />
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_header"
+            android:text="@string/text_tv_settings_update_base"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView6" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_tv_sprayballs_choose_file"
+                android:id="@+id/textView7" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:weightSum="1">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rb_sprayballs_update_local" />
+
+                <EditText
+                    android:layout_width="192dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_sprayballs_local_file_path"
+                    android:layout_weight="0.98"
+                    android:textSize="12dp" />
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="..."
+                    android:id="@+id/btn_sprayballs_choose_file" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_tv_sprayballs_download_from_web"
+                android:id="@+id/textView8" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rb_sprayballs_update_web" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_sprayballs_web_file_path"
+                    android:hint="www.example.com/sprayballs.csv"
+                    android:textSize="12dp"
+                    android:text="www.zets-swe.ru/share/sprayballs.csv" />
+
+            </LinearLayout>
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btn_sprayballs_set_update"
+            style="@style/button_install" />
+
+    </LinearLayout>
+
+</FrameLayout>

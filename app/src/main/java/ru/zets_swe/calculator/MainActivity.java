@@ -1,9 +1,15 @@
 package ru.zets_swe.calculator;
 
+import android.Manifest;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,7 +21,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import java.io.File;
 import java.util.Locale;
 
 import ru.zets_swe.calculator.fragments.FragmentAbout;
@@ -24,6 +29,7 @@ import ru.zets_swe.calculator.fragments.FragmentFiller;
 import ru.zets_swe.calculator.fragments.FragmentLosses;
 import ru.zets_swe.calculator.fragments.FragmentPipes;
 import ru.zets_swe.calculator.fragments.FragmentPoultry;
+import ru.zets_swe.calculator.fragments.FragmentSettings;
 import ru.zets_swe.calculator.fragments.FragmentSprayballs;
 import ru.zets_swe.calculator.fragments.FragmentTanks;
 
@@ -38,6 +44,7 @@ public class MainActivity extends AppCompatActivity
     FragmentSprayballs fragmentSprayballs;
     FragmentPoultry fragmentPoultry;
     FragmentAbout fragmentAbout;
+    FragmentSettings fragmentSettings;
 
     SharedPreferences sPref;
     Configuration config = new Configuration();
@@ -45,16 +52,31 @@ public class MainActivity extends AppCompatActivity
     final String LANGUAGE = "language";
     final String RUS_LANGUAGE = "ru";
     final String EN_LANGUAGE = "en";
+    private final int MY_PERMISSIONS_REQUEST_CODE = 1;
+
+
+    private boolean checkPermissions() {
+        if (ActivityCompat.checkSelfPermission(this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            return false;
+        }
+        return true;
+    }
+
+
+    private void setPermissions() {
+        ActivityCompat.requestPermissions(this, new String[]{
+                Manifest.permission.WRITE_EXTERNAL_STORAGE}, MY_PERMISSIONS_REQUEST_CODE);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         sPref = getPreferences(MODE_PRIVATE);
         String lang = sPref.getString(LANGUAGE, Locale.getDefault().getLanguage());
-        Toast.makeText(MainActivity.this, lang, Toast.LENGTH_SHORT).show();
+        /*Toast.makeText(MainActivity.this, lang, Toast.LENGTH_SHORT).show();*/
         Locale myLoc = new Locale(lang, lang.toUpperCase());
         config.locale = myLoc;
         getResources().updateConfiguration(config, null);
-
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -79,7 +101,36 @@ public class MainActivity extends AppCompatActivity
         fragmentBottleWasher = new FragmentBottleWasher();
         fragmentPoultry = new FragmentPoultry();
         fragmentAbout = new FragmentAbout();
+        fragmentSettings = new FragmentSettings();
 
+
+        if (checkPermissions()) {
+           Toast.makeText(MainActivity.this, "Разрешения уже получены", Toast.LENGTH_SHORT).show();
+        } else {
+            setPermissions();
+        }
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode != MY_PERMISSIONS_REQUEST_CODE) {
+            return;
+        }
+        boolean isGranted = true;
+        for (int result : grantResults) {
+            if (result != PackageManager.PERMISSION_GRANTED) {
+                isGranted = false;
+                break;
+            }
+        }
+
+        if (isGranted) {
+            Toast.makeText(MainActivity.this, "Разрешения получены", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "В разрешениях отказано", Toast.LENGTH_LONG).show();
+
+        }
     }
 
     @Override
@@ -97,7 +148,7 @@ public class MainActivity extends AppCompatActivity
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         String lan = sPref.getString(LANGUAGE, "").toString();
-        MenuItem item = menu.findItem(R.id.action_language);
+        MenuItem item = menu.findItem(R.id.settings);
         if (lan.equals(RUS_LANGUAGE)) {
             item.setIcon(R.drawable.ic_russian_flag_24dp);
         } else {
@@ -111,10 +162,11 @@ public class MainActivity extends AppCompatActivity
 
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_language) {
-            setLanguage();
-            super.recreate();
+        if (id == R.id.settings) {
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.container, fragmentSettings);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
         } else if (id == R.id.action_about) {
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.container, fragmentAbout);
@@ -155,22 +207,6 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    void setLanguage() {
-        String lan = sPref.getString(LANGUAGE, "").toString();
-        SharedPreferences.Editor ed = sPref.edit();
-
-        if (lan.equals(RUS_LANGUAGE)) {
-            ed.putString(LANGUAGE, EN_LANGUAGE);
-            ed.commit();
-            Log.d("Lan=", sPref.getString(LANGUAGE, "").toString());
-        } else {
-            ed.putString(LANGUAGE, RUS_LANGUAGE);
-            ed.commit();
-            Log.d("Lan=", sPref.getString(LANGUAGE, "").toString());
-        }
-
-
-    }
 
 
 }

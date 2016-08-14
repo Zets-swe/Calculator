@@ -1,23 +1,23 @@
 package ru.zets_swe.calculator;
 
 import android.app.Activity;
-import android.content.res.Resources;
 import android.os.Environment;
 import android.util.Log;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Sprayballs {
     public List<Ball> getSprayballs() {
@@ -32,11 +32,14 @@ public class Sprayballs {
 
     public Sprayballs(Activity activity) {
         this.resourceProvider = activity;
+    }
+
+    public void init(){
         this.sourceFile = resourceProvider.getResources().openRawResource(R.raw.sprayballs);
         this.destFile = new File(Environment.getExternalStorageDirectory().getPath() + "/" + fileName);
         if(!destFile.exists()) {
             try {
-                this.copyCSV();
+                this.copyCSVfromRaw();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -48,34 +51,33 @@ public class Sprayballs {
         }
     }
 
+    public void copyCSVfromRaw() throws IOException {
+        InputStreamReader isr = new InputStreamReader(sourceFile);
+        BufferedReader reader = new BufferedReader(isr);
+        String line;
+        StringBuilder builder = new StringBuilder();
 
-    public void copyCSV() throws IOException {
-            InputStreamReader isr = new InputStreamReader(sourceFile);
-            BufferedReader reader = new BufferedReader(isr);
-            String line;
-            StringBuilder builder = new StringBuilder();
-
-            try {
-                while ((line = reader.readLine()) != null) {
-                    builder.append(line + "\n");
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
+        try {
+            while ((line = reader.readLine()) != null) {
+                builder.append(line + "\n");
             }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-            try {
-                sourceFile.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        try {
+            sourceFile.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-            try {
-                FileOutputStream fos = new FileOutputStream(destFile);
-                fos.write(builder.toString().getBytes());
-                fos.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        try {
+            FileOutputStream fos = new FileOutputStream(destFile);
+            fos.write(builder.toString().getBytes());
+            fos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -160,18 +162,126 @@ public class Sprayballs {
                     ball.setPressure_max(Double.parseDouble(data));
                 else
                     System.out.println("Некорректные данные::" + data);
-                index++;
+                    index++;
             }
             index = 0;
             sprayballs.add(ball);
             System.out.println("add ball " + sprayballs.size());
         }
         reader.close();
-        Log.w("Строка из шаров",sprayballs.get(3).getFactory());
-        System.out.println(sprayballs.get(3).getFactory());
+        //Log.w("Строка из шаров",sprayballs.get(3).getFactory());
         //закрываем наш ридер
 
     }
 
+
+    public void copyCSV(File sourceFile, File dFile) throws IOException {
+        if(!dFile.exists()) {
+            dFile.createNewFile();
+        }
+
+        FileChannel source = null;
+        FileChannel destination = null;
+
+        try {
+            source = new FileInputStream(sourceFile).getChannel();
+            destination = new FileOutputStream(dFile).getChannel();
+            destination.transferFrom(source, 0, source.size());
+        }
+        finally {
+            if(source != null) {
+                source.close();
+            }
+            if(destination != null) {
+                destination.close();
+            }
+        }
+    }
+
+
+    public List<String> getUniqType(){
+        Set<String> uniqItems = new HashSet<String>();
+        for (Ball ball : sprayballs){
+            uniqItems.add(ball.getType());
+        }
+        List<String> arrayUniqItems = new ArrayList<String>();;
+        arrayUniqItems.addAll(uniqItems);
+        return arrayUniqItems;
+    }
+
+
+    public List<String> getTypeAngles(String type){
+        Set<String> uniqAngles = new HashSet<String>();
+        for (Ball ball : sprayballs){
+            if (ball.getType().equals(type)){
+                uniqAngles.add(String.valueOf(ball.getAngle()));
+            }
+
+        }
+        List<String> arrayUniqItems = new ArrayList<String>();
+        arrayUniqItems.addAll(uniqAngles);
+        return arrayUniqItems;
+    }
+
+/*
+
+    public List<Ball> filterByTADF(String type, String angleS, String diameterS, String flowS){
+        int angle = Integer.parseInt(angleS);
+        double diameter = Double.parseDouble(diameterS);
+        double flow = Double.parseDouble(flowS);
+        List<Ball> filteredBalls = new ArrayList<>();
+        filteredBalls.addAll(sprayballs);
+        filterByType(type, filteredBalls);
+        filterByAngle(angle, filteredBalls);
+        filterByDiameter(diameter, filteredBalls);
+        filterByFlow(flow, filteredBalls);
+    for (Ball b : filteredBalls) {
+        System.out.println(b.toString());
+    }
+        return filteredBalls;
+    }
+
+
+    private List<Ball> filterByType(String type, List<Ball> filteredBalls){
+
+        for (Ball b : filteredBalls){
+            if (!type.equals(b.getType())){
+                filteredBalls.remove(b);
+            }
+        }
+        System.out.println(String.valueOf(filteredBalls.size()));
+        return filteredBalls;
+    }
+
+    private List<Ball> filterByAngle(int angle, List<Ball> filteredBalls){
+        for (Ball b : filteredBalls){
+            if (angle != b.getAngle()){
+                filteredBalls.remove(b);
+            }
+        }
+        System.out.println(String.valueOf(filteredBalls.size()));
+        return filteredBalls;
+    }
+
+    private List<Ball> filterByDiameter(double diameter, List<Ball> filteredBalls){
+        for (Ball b : filteredBalls){
+            if (!(b.getDiameter_min() <= diameter) && (diameter <= b.getDiameter_max())){
+                filteredBalls.remove(b);
+            }
+        }
+        System.out.println(String.valueOf(filteredBalls.size()));
+        return filteredBalls;
+    }
+
+    private List<Ball> filterByFlow(double flow, List<Ball> filteredBalls){
+        for (Ball b : filteredBalls){
+            if (!(b.getFlow_min() <= flow) && (flow <= b.getFlow_max())){
+                filteredBalls.remove(b);
+            }
+        }
+        System.out.println(String.valueOf(filteredBalls.size()));
+        return filteredBalls;
+    }
+*/
 
 }

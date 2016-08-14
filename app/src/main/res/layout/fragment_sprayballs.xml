@@ -104,8 +104,7 @@
 
         <LinearLayout
             android:id="@+id/L_sprayballs2"
-            style="@style/notes_view"
-            android:visibility="gone">
+            style="@style/notes_view">
 
 
             <LinearLayout
@@ -176,6 +175,136 @@
                     android:id="@+id/et_sprayballs_work_flow_m3_h"
                     style="@style/editText_vertical"
                     android:inputType="number|numberDecimal" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/L_sprayballs2_list"
+                style="@style/notes_view">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/text_tv_bottle_washer2_manufacture"
+                            android:id="@+id/tv_factory"
+                            android:layout_gravity="center"
+                            android:textStyle="bold" />
+                        <View
+                            android:layout_width="wrap_content"
+                            android:background="@drawable/separator"
+                            android:layout_height="1dp" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/text_tv_sprayballs_series"
+                                android:id="@+id/tv_series"
+                                android:layout_gravity="center" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/text_tv_sprayballs_mark"
+                                android:id="@+id/tv_mark"
+                                android:textAlignment="viewEnd" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dmin"
+                            android:id="@+id/tv_diameter_min"
+                            android:layout_gravity="center" />
+                        <View
+                            android:layout_width="wrap_content"
+                            android:background="@drawable/separator"
+                            android:layout_height="1dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dmax"
+                            android:id="@+id/tv_diameter_max"
+                            android:layout_gravity="center" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fmin"
+                            android:id="@+id/tv_flow_min"
+                            android:layout_gravity="center" />
+                        <View
+                            android:layout_width="wrap_content"
+                            android:background="@drawable/separator"
+                            android:layout_height="1dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fmax"
+                            android:id="@+id/tv_flow_max"
+                            android:layout_gravity="center" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pmin"
+                            android:id="@+id/tv_pressure_min"
+                            android:layout_gravity="center" />
+                        <View
+                            android:layout_width="wrap_content"
+                            android:background="@drawable/separator"
+                            android:layout_height="1dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pmax"
+                            android:id="@+id/tv_pressure_max"
+                            android:layout_gravity="center" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ListView
+                    android:id="@+id/lv_sprayballs"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal" />
+
             </LinearLayout>
 
             <Button
