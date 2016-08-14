@@ -34,10 +34,10 @@ public class Sprayballs {
         this.resourceProvider = activity;
     }
 
-    public void init(){
+    public void init() {
         this.sourceFile = resourceProvider.getResources().openRawResource(R.raw.sprayballs);
         this.destFile = new File(Environment.getExternalStorageDirectory().getPath() + "/" + fileName);
-        if(!destFile.exists()) {
+        if (!destFile.exists()) {
             try {
                 this.copyCSVfromRaw();
             } catch (IOException e) {
@@ -162,11 +162,11 @@ public class Sprayballs {
                     ball.setPressure_max(Double.parseDouble(data));
                 else
                     System.out.println("Некорректные данные::" + data);
-                    index++;
+                index++;
             }
             index = 0;
             sprayballs.add(ball);
-            System.out.println("add ball " + sprayballs.size());
+            //System.out.println("add ball " + sprayballs.size());
         }
         reader.close();
         //Log.w("Строка из шаров",sprayballs.get(3).getFactory());
@@ -176,7 +176,7 @@ public class Sprayballs {
 
 
     public void copyCSV(File sourceFile, File dFile) throws IOException {
-        if(!dFile.exists()) {
+        if (!dFile.exists()) {
             dFile.createNewFile();
         }
 
@@ -187,33 +187,33 @@ public class Sprayballs {
             source = new FileInputStream(sourceFile).getChannel();
             destination = new FileOutputStream(dFile).getChannel();
             destination.transferFrom(source, 0, source.size());
-        }
-        finally {
-            if(source != null) {
+        } finally {
+            if (source != null) {
                 source.close();
             }
-            if(destination != null) {
+            if (destination != null) {
                 destination.close();
             }
         }
     }
 
 
-    public List<String> getUniqType(){
+    public List<String> getUniqType() {
         Set<String> uniqItems = new HashSet<String>();
-        for (Ball ball : sprayballs){
+        for (Ball ball : sprayballs) {
             uniqItems.add(ball.getType());
         }
-        List<String> arrayUniqItems = new ArrayList<String>();;
+        List<String> arrayUniqItems = new ArrayList<String>();
+        ;
         arrayUniqItems.addAll(uniqItems);
         return arrayUniqItems;
     }
 
 
-    public List<String> getTypeAngles(String type){
+    public List<String> getTypeAngles(String type) {
         Set<String> uniqAngles = new HashSet<String>();
-        for (Ball ball : sprayballs){
-            if (ball.getType().equals(type)){
+        for (Ball ball : sprayballs) {
+            if (ball.getType().equals(type)) {
                 uniqAngles.add(String.valueOf(ball.getAngle()));
             }
 
@@ -223,18 +223,19 @@ public class Sprayballs {
         return arrayUniqItems;
     }
 
-/*
 
-    public List<Ball> filterByTADF(String type, String angleS, String diameterS, String flowS){
+    public List<Ball> filterByTADF(String type, String angleS, String diameterS, String flowS) {
         int angle = Integer.parseInt(angleS);
         double diameter = Double.parseDouble(diameterS);
         double flow = Double.parseDouble(flowS);
         List<Ball> filteredBalls = new ArrayList<>();
         filteredBalls.addAll(sprayballs);
-        filterByType(type, filteredBalls);
-        filterByAngle(angle, filteredBalls);
-        filterByDiameter(diameter, filteredBalls);
-        filterByFlow(flow, filteredBalls);
+
+        filteredBalls = filterByType(type, filteredBalls);
+        filteredBalls = filterByAngle(angle, filteredBalls);
+        filteredBalls = filterByDiameter(diameter, filteredBalls);
+        filteredBalls = filterByFlow(flow, filteredBalls);
+
     for (Ball b : filteredBalls) {
         System.out.println(b.toString());
     }
@@ -242,46 +243,44 @@ public class Sprayballs {
     }
 
 
-    private List<Ball> filterByType(String type, List<Ball> filteredBalls){
-
-        for (Ball b : filteredBalls){
-            if (!type.equals(b.getType())){
-                filteredBalls.remove(b);
+    private List<Ball> filterByType(String type, List<Ball> filteredBalls) {
+        List<Ball> typeFilter = new ArrayList<>();
+        for (Ball b : filteredBalls) {
+            if (type.equals(b.getType())) {
+                typeFilter.add(b);
             }
         }
-        System.out.println(String.valueOf(filteredBalls.size()));
-        return filteredBalls;
+        return typeFilter;
     }
 
-    private List<Ball> filterByAngle(int angle, List<Ball> filteredBalls){
-        for (Ball b : filteredBalls){
-            if (angle != b.getAngle()){
-                filteredBalls.remove(b);
+    private List<Ball> filterByAngle(int angle, List<Ball> filteredBalls) {
+        List<Ball> angleFilter = new ArrayList<>();
+        for (Ball b : filteredBalls) {
+            if (angle == b.getAngle()) {
+                angleFilter.add(b);
             }
         }
-        System.out.println(String.valueOf(filteredBalls.size()));
-        return filteredBalls;
+        return angleFilter;
     }
 
-    private List<Ball> filterByDiameter(double diameter, List<Ball> filteredBalls){
-        for (Ball b : filteredBalls){
-            if (!(b.getDiameter_min() <= diameter) && (diameter <= b.getDiameter_max())){
-                filteredBalls.remove(b);
+    private List<Ball> filterByDiameter(double diameter, List<Ball> filteredBalls) {
+        List<Ball> diametrFilter = new ArrayList<>();
+        for (Ball b : filteredBalls) {
+            if ((b.getDiameter_min() <= diameter) && (diameter <= b.getDiameter_max())) {
+                diametrFilter.add(b);
             }
         }
-        System.out.println(String.valueOf(filteredBalls.size()));
-        return filteredBalls;
+        return diametrFilter;
     }
 
-    private List<Ball> filterByFlow(double flow, List<Ball> filteredBalls){
-        for (Ball b : filteredBalls){
-            if (!(b.getFlow_min() <= flow) && (flow <= b.getFlow_max())){
-                filteredBalls.remove(b);
+    private List<Ball> filterByFlow(double flow, List<Ball> filteredBalls) {
+        List<Ball> flowFilter = new ArrayList<>();
+        for (Ball b : filteredBalls) {
+            if ((b.getFlow_min() <= flow) && (flow <= b.getFlow_max())) {
+                flowFilter.add(b);
             }
         }
-        System.out.println(String.valueOf(filteredBalls.size()));
-        return filteredBalls;
+        return flowFilter;
     }
-*/
 
 }

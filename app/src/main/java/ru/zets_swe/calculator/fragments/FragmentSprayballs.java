@@ -85,8 +85,8 @@ public class FragmentSprayballs extends Fragment {
     //Раздел объявления ListView
     //****************************************
     ListView lv_sprayballs;
-    ArrayList<SelectionBall> selectedSprayballs = new ArrayList<SelectionBall>();
-    SprayballsAdapter sprayballsAdapter;
+    //ArrayList<SelectionBall> selectedSprayballs = new ArrayList<SelectionBall>();
+    //SprayballsAdapter sprayballsAdapter;
 
 
     @Override
@@ -189,10 +189,7 @@ public class FragmentSprayballs extends Fragment {
         // Раздел инициализации ListView
         //****************************************
         lv_sprayballs = (ListView) rootView.findViewById(R.id.lv_sprayballs);
-        fillData();
-        sprayballsAdapter = new SprayballsAdapter(getContext(), selectedSprayballs);
-        lv_sprayballs.setAdapter(sprayballsAdapter);
-        setListViewHeightBasedOnChildren(lv_sprayballs);
+
 
 
 
@@ -208,8 +205,7 @@ public class FragmentSprayballs extends Fragment {
                 ArrayAdapter<String> angleAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, angle);
                 angleAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 sp_sprayballs_specify_the_angle.setAdapter(angleAdapter);
-
-                Toast.makeText(getActivity(), "Ваш выбор: " + types.get(selectedItemPosition), Toast.LENGTH_SHORT).show();
+                L_sprayballs2_list.setVisibility(View.GONE);
             }
             public void onNothingSelected(AdapterView<?> parent) {
             }
@@ -230,12 +226,20 @@ public class FragmentSprayballs extends Fragment {
                 } else {
                     String T = sp_sprayballs_choose_the_type.getSelectedItem().toString();
                     String A = sp_sprayballs_specify_the_angle.getSelectedItem().toString();
-                    double D = Double.parseDouble(et_sprayballs_diameter_of_the_tank_m.getText().toString());
-                    double F = Double.parseDouble(et_sprayballs_work_flow_m3_h.getText().toString());
+                    String D = et_sprayballs_diameter_of_the_tank_m.getText().toString();
+                    String F = et_sprayballs_work_flow_m3_h.getText().toString();
 
                     L_sprayballs2_list.startAnimation(anim_show);
                     L_sprayballs2_list.setVisibility(View.VISIBLE);
 
+                    ArrayList<SelectionBall> selectedSprayballs = new ArrayList<SelectionBall>();
+                    for (Ball b : sprayballs.filterByTADF(T, A, D, F)) {
+                        selectedSprayballs.add(new SelectionBall(b));
+                    }
+
+                    SprayballsAdapter sprayballsAdapter = new SprayballsAdapter(getContext(), selectedSprayballs);
+                    lv_sprayballs.setAdapter(sprayballsAdapter);
+                    setListViewHeightBasedOnChildren(lv_sprayballs);
                     //Toast.makeText(getActivity(), T + " " + A + " " + D + " " + F , Toast.LENGTH_LONG).show();
 
                 }
@@ -267,14 +271,6 @@ public class FragmentSprayballs extends Fragment {
             return true;
         } else {
             return false;
-        }
-    }
-
-
-    // генерируем данные для адаптера
-    void fillData(){
-        for (int i = 1; i <= 20; i++) {
-            selectedSprayballs.add(new SelectionBall("Factory " + i, "Series " + i, "Mark " + i, i * 10, i * 10, i * 10, i * 10, i * 10, i * 10));
         }
     }
 
