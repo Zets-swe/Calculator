@@ -473,22 +473,63 @@ public class FragmentLosses extends Fragment {
         btn_losses5_calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (false) {//TODO: Подумать как сделать проверку
+                if ((isEmpty(et_losses5_water_volume_m3) || isEmpty(et_losses5_water_temperature_deg) || isEmpty(et_losses5_required_water_temperature_deg) || isEmpty(et_losses5_boiler_productivity)) &&
+                        (isEmpty(et_losses5flow_rate_m3) || isEmpty(et_losses5period_min) || isEmpty(et_losses5_temperature_beginning_heating) || isEmpty(et_losses5_temperature_of_heating_deg))) {//TODO: Подумать как сделать проверку
                     Toast.makeText(getActivity(), R.string.note_empty_field, Toast.LENGTH_LONG).show();
                 } else {
-                    double V = Double.parseDouble(et_losses5_water_volume_m3.getText().toString());
-                    double T1 = Double.parseDouble(et_losses5_water_temperature_deg.getText().toString());
-                    double T2 = Double.parseDouble(et_losses5_required_water_temperature_deg.getText().toString());
-                    double m = Double.parseDouble(et_losses5_boiler_productivity.getText().toString());
+                    double V;
+                    if (!isEmpty(et_losses5_water_volume_m3)) {
+                        V = Double.parseDouble(et_losses5_water_volume_m3.getText().toString());
+                    } else {
+                        V=0;
+                    }
+                    double T1;
+                    if (!isEmpty(et_losses5_water_temperature_deg)) {
+                        T1 = Double.parseDouble(et_losses5_water_temperature_deg.getText().toString());
+                    } else {
+                        T1=0;
+                    }
+                    double T2;
+                    if (!isEmpty(et_losses5_required_water_temperature_deg)) {
+                        T2 = Double.parseDouble(et_losses5_required_water_temperature_deg.getText().toString());
+                    } else {
+                        T2=0;
+                    }
+                    double m;
+                    if (!isEmpty(et_losses5_boiler_productivity)) {
+                        m = Double.parseDouble(et_losses5_boiler_productivity.getText().toString());
+                    } else {
+                        m=0;
+                    }
                     int pos = sp_losses5_energy_source.getSelectedItemPosition();
                     double Kl = Double.parseDouble(energy_cal[pos]);
                     double E1 = (100 * 1000 * V * (T2 - T1)) / m;
                     double M1 = E1 / Kl;
 
-                    double P = Double.parseDouble(et_losses5flow_rate_m3.getText().toString());
-                    double t = Double.parseDouble(et_losses5period_min.getText().toString());
-                    double Tn = Double.parseDouble(et_losses5_temperature_beginning_heating.getText().toString());
-                    double Tp = Double.parseDouble(et_losses5_temperature_of_heating_deg.getText().toString());
+                    double P;
+                    if (!isEmpty(et_losses5flow_rate_m3)) {
+                        P = Double.parseDouble(et_losses5flow_rate_m3.getText().toString());
+                    } else {
+                        P=0;
+                    }
+                    double t;
+                    if (!isEmpty(et_losses5period_min)) {
+                        t = Double.parseDouble(et_losses5period_min.getText().toString());
+                    } else {
+                        t=0;
+                    }
+                    double Tn;
+                    if (!isEmpty(et_losses5_temperature_beginning_heating)) {
+                        Tn = Double.parseDouble(et_losses5_temperature_beginning_heating.getText().toString());
+                    } else {
+                        Tn=0;
+                    }
+                    double Tp;
+                    if (!isEmpty(et_losses5_temperature_of_heating_deg)) {
+                        Tp = Double.parseDouble(et_losses5_temperature_of_heating_deg.getText().toString());
+                    } else {
+                        Tp=0;
+                    }
                     double E2 = (100 * 16.667 * P * t * (Tp - Tn)) / m;
                     double M2 = E2 / Kl;
 
@@ -496,13 +537,13 @@ public class FragmentLosses extends Fragment {
                     double Ed = (E / 4.1840) / 1000; //МДж
                     double M = M1 + M2; //кг
 
-                    et_losses5W_spent_energy_kw.setText(String.valueOf(String.format("%.2f", E1)));
-                    et_losses5W_spent_fuel_kg.setText(String.valueOf(String.format("%.2f", M1)));
-                    et_losses5H_spent_energy_kw.setText(String.valueOf(String.format("%.2f", E2)));
-                    et_losses5H_spent_fuel_kg.setText(String.valueOf(String.format("%.2f", M2)));
-                    et_losses5_total_amount_energy_1.setText(String.valueOf(String.format("%.2f", E)));
-                    et_losses5_total_amount_energy_2.setText(String.valueOf(String.format("%.2f", Ed)));
-                    et_losses5_total_amount_fuel.setText(String.valueOf(String.format("%.2f", M)));
+                    et_losses5W_spent_energy_kw.setText(String.valueOf(String.format("%.0f", E1)));
+                    et_losses5W_spent_fuel_kg.setText(String.valueOf(String.format("%.0f", M1)));
+                    et_losses5H_spent_energy_kw.setText(String.valueOf(String.format("%.0f", E2)));
+                    et_losses5H_spent_fuel_kg.setText(String.valueOf(String.format("%.0f", M2)));
+                    et_losses5_total_amount_energy_1.setText(String.valueOf(String.format("%.0f", E)));
+                    et_losses5_total_amount_energy_2.setText(String.valueOf(String.format("%.0f", Ed)));
+                    et_losses5_total_amount_fuel.setText(String.valueOf(String.format("%.0f", M)));
 
                 }
 

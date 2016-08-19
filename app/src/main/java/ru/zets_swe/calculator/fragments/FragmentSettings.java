@@ -1,11 +1,15 @@
 package ru.zets_swe.calculator.fragments;
 
 
+import android.Manifest;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -63,6 +67,7 @@ public class FragmentSettings extends Fragment {
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_settings, container, false);
+
         rb_sprayballs_rus = (RadioButton) rootView.findViewById(R.id.rb_sprayballs_rus);
         rb_sprayballs_eng = (RadioButton) rootView.findViewById(R.id.rb_sprayballs_eng);
         rb_sprayballs_update_local = (RadioButton) rootView.findViewById(R.id.rb_sprayballs_update_local);
@@ -132,6 +137,7 @@ public class FragmentSettings extends Fragment {
                     }
                 } else {
                     file_path = et_sprayballs_web_file_path.getText().toString();
+                    Toast.makeText(getActivity(), file_path, Toast.LENGTH_SHORT).show();
                     URL website = null;
                     try {
                         website = new URL(file_path);
@@ -139,7 +145,7 @@ public class FragmentSettings extends Fragment {
                         e.printStackTrace();
                     }
                     ReadableByteChannel rbc = null;
-                    try {
+/*                    try {
                         rbc = Channels.newChannel(website.openStream());
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -154,13 +160,9 @@ public class FragmentSettings extends Fragment {
                         fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
                     } catch (IOException e) {
                         e.printStackTrace();
-                    }
+                    }*/
                 }
 
-
-
-
-                Toast.makeText(getActivity(), file_path, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -177,6 +179,7 @@ public class FragmentSettings extends Fragment {
                 rb_sprayballs_update_local.setChecked(false);
             }
         });
+
 
         return rootView;
     }

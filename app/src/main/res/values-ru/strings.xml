@@ -91,10 +91,10 @@
     <string name="text_tv_losses5_required_water_temperature_deg">Необходимая температура воды, град.</string>
     <string name="text_tv_losses5_spent_energy_kw">Израсходованная энергия, кВт</string>
     <string name="text_tv_losses5_spent_fuel_kg">Расходуемое топливо, кг</string>
-    <string name="text_tv_losses5_water_temperature_deg">Температура вроды, град.</string>
+    <string name="text_tv_losses5_water_temperature_deg">Температура воды, град.</string>
     <string name="text_tv_losses5_water_volume_m3">Объем воды, м3</string>
     <string name="text_tv_losses5_temperature_beginning_heating">Температура на начало нагрева, град.</string>
-    <string name="text_tv_losses5_temperature_of_heating_deg">Температура нагрева, нрад.</string>
+    <string name="text_tv_losses5_temperature_of_heating_deg">Температура нагрева, град.</string>
     <string name="text_tv_losses5flow_rate_m3">Расход потока, м3</string>
     <string name="text_tv_losses5period_min">Время, мин</string>
 

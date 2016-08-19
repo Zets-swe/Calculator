@@ -104,9 +104,7 @@ public class MainActivity extends AppCompatActivity
         fragmentSettings = new FragmentSettings();
 
 
-        if (checkPermissions()) {
-           Toast.makeText(MainActivity.this, "Разрешения уже получены", Toast.LENGTH_SHORT).show();
-        } else {
+        if (!checkPermissions()) {
             setPermissions();
         }
 
@@ -126,7 +124,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         if (isGranted) {
-            Toast.makeText(MainActivity.this, "Разрешения получены", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "Разрешения предоставлены", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "В разрешениях отказано", Toast.LENGTH_LONG).show();
 

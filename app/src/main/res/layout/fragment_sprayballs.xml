@@ -110,7 +110,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingTop="20dp">
 
                 <TextView
                     style="@style/table_text_vertical"
@@ -129,7 +130,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingTop="20dp"
+                android:paddingBottom="10dp">
 
                 <TextView
                     style="@style/table_text_vertical"
@@ -301,11 +304,17 @@
                     </LinearLayout>
                 </LinearLayout>
 
+                <View
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/separator"
+                    android:layout_height="3dp" />
+
                 <ListView
                     android:id="@+id/lv_sprayballs"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal" />
+                    android:layout_gravity="center_horizontal"
+                    android:dividerHeight="3dp"/>
 
             </LinearLayout>
 
